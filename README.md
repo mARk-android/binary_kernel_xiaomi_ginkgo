@@ -2,7 +2,7 @@
 
 Ginkgo Willow
 
-Using AnyKernel to make a flashable zip file
+Using AnyKernel to make a flashable zip file with Image.gz-dtb
 
 or
 
