@@ -1,0 +1,135 @@
+Changes in 4.14.227-rc1
+Upstream 4.14.226 -> 227-rc
+
+net: dsa: b53: Support setting learning on port
+bpf: Add sanity check for upper ptr_limit
+bpf: Simplify alu_limit masking for pointer arithmetic	
+bpf: Fix off-by-one for area size in creating mask to left
+ext4: check journal inode extents more carefully
+ext4: don't allow overlapping system zones
+ext4: handle error of ext4_setup_system_zone() on remount
+
+
+
+
+Changes in 4.14.226
+Upstream 4.14.225 -> 226
+
+cb83ddc Linux 4.14.226 linux-4.14.y v4.14.226
+97b20ec xen/events: avoid handling the same event on two cpus at the same time 
+0aa3901 xen/events: don't unmask an event channel when an eoi is pending 
+1801b17 xen/events: reset affinity of 2-level event when tearing it down
+593b7ff iio: imu: adis16400: release allocated memory on failure 
+ccb7c81 KVM: arm64: Fix exclusive limit for IPA size 
+e8a6799 hwmon: (lm90) Fix max6658 sporadic wrong temperature reading 
+4a8b412 binfmt_misc: fix possible deadlock in bm_register_write 
+9faa57d powerpc/64s: Fix instruction encoding for lis in ppc_function_entry() 
+997e685 include/linux/sched/mm.h: use rcu_dereference in in_vfork() 
+44bd240 stop_machine: mark helpers __always_inline
+4769013 configfs: fix a use-after-free in __configfs_open_file
+78bda6e block: rsxx: fix error return code of rsxx_pci_probe() 
+6c7a708 NFSv4.2: fix return value of _nfs4_get_security_label() 
+876bb39 sh_eth: fix TRSCER mask for R7S72100 
+9fce2b2 staging: comedi: pcl818: Fix endian problem for AI command data 
+1467c0a staging: comedi: pcl711: Fix endian problem for AI command data 
+d46b4b8 staging: comedi: me4000: Fix endian problem for AI command data 
+e375550 staging: comedi: dmm32at: Fix endian problem for AI command data 
+5b4dd43 staging: comedi: das800: Fix endian problem for AI command data 
+4c35014 staging: comedi: das6402: Fix endian problem for AI command data 
+e274c19 staging: comedi: adv_pci1710: Fix endian problem for AI command data 
+b7e8cd3 staging: comedi: addi_apci_1500: Fix endian problem for command sample 
+9e40d80 staging: comedi: addi_apci_1032: Fix endian problem for COS sample 
+f5f8232 staging: rtl8192e: Fix possible buffer overflow in _rtl92e_wx_set_scan 
+8fccad1 staging: rtl8712: Fix possible buffer overflow in r8712_sitesurvey_cmd 
+9085704 staging: ks7010: prevent buffer overflow in ks_wlan_set_scan() 
+9d6a722 staging: rtl8188eu: fix potential memory corruption in rtw_check_beacon_data()
+bf87357 staging: rtl8712: unterminated string leads to read overflow 
+33cdc63 staging: rtl8188eu: prevent ->ssid overflow in rtw_wx_set_scan()
+6f7815d staging: rtl8192u: fix ->ssid overflow in r8192_wx_set_scan()
+68b55e8 usbip: fix vhci_hcd attach_store() races leading to gpf 
+04f879b usbip: fix stub_dev usbip_sockfd_store() races leading to gpf 
+66ea0d3 usbip: fix vudc to check for stream socket 
+2aa95d9 usbip: fix vhci_hcd to check for stream socket 
+83d4495 usbip: fix stub_dev to check for stream socket 
+838096b USB: serial: cp210x: add some more GE USB IDs 
+6f6cc57 USB: serial: cp210x: add ID for Acuity Brands nLight Air Adapter 
+a21bbd8 USB: serial: ch341: add new Product ID by Niv Sardi · 2 weeks ago
+1e6d1e8 USB: serial: io_edgeport: fix memory leak in edge_startup b
+0e624b1 usb: xhci: Fix ASMedia ASM1042A and ASM3242 DMA addressing 
+061dede xhci: Improve detection of device initiated wake signal. 
+892d0f4 usb: renesas_usbhs: Clear PIPECFG for re-enabling pipe with other EPNUM 
+82cb527 usb: gadget: f_uac1: stop playback on function disable 
+45ea7e1 usb: gadget: f_uac2: always increase endpoint max_packet_size by one audio slot 
+a73840c USB: gadget: u_ether: Fix a configfs return code 
+ebcbbc5 Goodix Fingerprint device is not a modem 
+90c58a5 mmc: core: Fix partition switch time for eMMC 
+8ce9c0b s390/dasd: fix hanging IO request during DASD driver unbind 
+3bf1f5e9 s390/dasd: fix hanging DASD driver unbind 
+f95ea27 Revert 95ebabde382c ("capabilities: Don't allow writing ambiguous v3 file capabilities") 
+f3a8be5 ALSA: usb-audio: Fix "cannot get freq eq" errors on Dell AE515 sound bar
+295954c ALSA: hda: Avoid spurious unsol event handling during S3/S4 
+51123fd ALSA: hda: Drop the BATCH workaround for AMD controllers
+cb03a7a ALSA: hda/hdmi: Cancel pending works before suspend 
+e22dc0b scsi: libiscsi: Fix iscsi_prep_scsi_cmd_pdu() error handling
+30b5608 s390/smp: __smp_rescan_cpus() - move cpumask away from stack
+a5bf6af PCI: mediatek: Add missing of_node_put() to fix reference leak
+1d70677 PCI: xgene-msi: Fix race in installing chained irq handler
+3bfe2ef powerpc/perf: Record counter overflow always if SAMPLE_IP is unset
+282ae0b powerpc: improve handling of unrecoverable system reset 
+6a0734c mmc: mediatek: fix race condition between msdc_request_timeout and irq 
+e24109b mmc: mxs-mmc: Fix a resource leak in an error handling path in 'mxs_mmc_probe()' 
+9a0c840 udf: fix silent AED tagLocation corruption 
+75593df net: phy: fix save wrong speed and duplex problem if autoneg is on 
+f197ef4 media: usbtv: Fix deadlock on suspend 
+ce8235b s390/cio: return -EFAULT if copy_to_user() fails 
+8a5160c drm: meson_drv add shutdown function
+beefac3 drm/compat: Clear bounce structures
+87515f3 s390/cio: return -EFAULT if copy_to_user() fails again
+f5e60f4 perf traceevent: Ensure read cmdlines are null terminated.
+f39592b net: stmmac: stop each tx channel independently
+9c49181 net: davicom: Fix regulator not turned off on driver removal 
+0a66ff0 net: davicom: Fix regulator not turned off on failed probe 
+e054e4b net: lapbether: Remove netif_start_queue / netif_stop_queue
+ab44f73 cipso,calipso: resolve a number of problems with the DOI refcounts 
+1735f75 net: usb: qmi_wwan: allow qmimux add/del with master up 
+e37189d net: sched: avoid duplicates in classes dump
+8f90269 net: stmmac: fix incorrect DMA channel intr enable setting 
+b0f7fe8 net/mlx4_en: update moderation when config reset 
+afa77d3 sh_eth: fix TRSCER mask for SH771x
+a3c3a54 Revert "mm, slub: consider rest of partial list if acquire_slab() fails"
+63c1a97c scripts/recordmcount.{c,pl}: support -ffunction-sections .text.* section names 
+18968aa cifs: return proper error code in statfs(2) 
+8895531 netfilter: x_tables: gpf inside xt_find_revision() 
+ce59ffca can: flexcan: enable RX FIFO after FRZ/HALT valid 
+bb7c903 can: flexcan: assert FRZ bit in flexcan_chip_freeze()
+ca4e856 can: skb: can_skb_set_owner(): fix ref counting if socket was closed before setting skb ownership
+5ea5d57c net: avoid infinite loop in mpls_gso_segment when mpls_hlen == 0
+ea3fb2c net: check if protocol extracted by virtio_net_hdr_set_proto is correct
+b2c2bd7 net: Introduce parse_protocol header_ops callback 
+5aac598 net: Fix gro aggregation for udp encaps with zero csum b
+86a468a ath9k: fix transmitting to stations in dynamic SMPS mode
+7543145 ethernet: alx: fix order of calls on resume
+ff38016 uapi: nfnetlink_cthelper.h: fix userspace compilation error
+
+
+
+Changes in 4.14.225
+Upstream 4.14.224 -> 225
+	FROMGIT: configfs: fix a use-after-free in __configfs_open_file
+	btrfs: raid56: simplify tracking of Q stripe presence
+	btrfs: fix raid6 qstripe kmap
+	PM: runtime: Update device status before letting suppliers suspend
+	usbip: tools: fix build error for multiple definition
+	ALSA: ctxfi: cthw20k2: fix mask on conf to allow 4 bits
+	rsxx: Return -EFAULT if copy_to_user() fails
+	dm table: fix iterate_devices based device capability checks
+	dm table: fix DAX iterate_devices based device capability checks
+	dm table: fix zoned iterate_devices based device capability checks
+	iommu/amd: Fix sleeping in atomic in increase_address_space()
+	mwifiex: pcie: skip cancel_work_sync() on reset failure path
+	PCI: Add function 1 DMA alias quirk for Marvell 9215 SATA controller
+	misc: eeprom_93xx46: Add quirk to support Microchip 93LC46B eeprom
+	drm/msm/a5xx: Remove overwriting A5XX_PC_DBG_ECO_CNTL register
+	input/ts: nt36xxx: Optimize interrupt CPU usage from entering deep idle states
+	
+	-> fix warning tune.c: iso c90 forbids mixing declarations and code
