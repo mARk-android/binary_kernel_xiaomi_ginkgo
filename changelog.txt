@@ -1,13 +1,31 @@
 Changes in 4.14.227-rc1
 Upstream 4.14.226 -> 227-rc
 
-net: dsa: b53: Support setting learning on port
-bpf: Add sanity check for upper ptr_limit
-bpf: Simplify alu_limit masking for pointer arithmetic	
-bpf: Fix off-by-one for area size in creating mask to left
-ext4: check journal inode extents more carefully
-ext4: don't allow overlapping system zones
-ext4: handle error of ext4_setup_system_zone() on remount
+	net: dsa: b53: Support setting learning on port
+	bpf: Add sanity check for upper ptr_limit
+	bpf: Simplify alu_limit masking for pointer arithmetic	
+	bpf: Fix off-by-one for area size in creating mask to left
+	ext4: check journal inode extents more carefully
+	ext4: don't allow overlapping system zones
+	ext4: handle error of ext4_setup_system_zone() on remount
+	bpf-prohibit-alu-ops-for-pointer-types-not-defining-ptr_limit
+	revert-pm-runtime-update-device-status-before-letting-suppliers-suspend
+	perf-tools-use-define-api.pure-full-instead-of-pure-parser
+	tools-build-feature-check-if-get_current_dir_name-is-available
+	tools-build-feature-check-if-eventfd-is-available
+	tools-build-check-if-gettid-is-available-before-providing-helper
+	perf-make-perf-able-to-build-with-latest-libbfd
+	tools-build-feature-check-if-pthread_barrier_t-is-available
+	btrfs-fix-race-when-cloning-extent-buffer-during-rewind-of-an-old-root
+	nvmet-don-t-check-iosqes-iocqes-for-discovery-controllers
+	nfsd-repair-misuse-of-sv_lock-in-5.10.16-rt30
+	svcrdma-disable-timeouts-on-rdma-backchannel
+	sunrpc-fix-refcount-leak-for-rpc-auth-modules
+	net-qrtr-fix-__netdev_alloc_skb-call
+	
+	-> unlocked all cpu freq from 300Mhz
+
+
 
 
 
