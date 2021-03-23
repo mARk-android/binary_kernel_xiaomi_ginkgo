@@ -1,13 +1,13 @@
-Changes in 4.14.227-rc1
-Upstream 4.14.226 -> 227-rc
+Changes in 4.14.227-rc
+Upstream 4.14.227-rc1 -> 227-rc
 
-	net: dsa: b53: Support setting learning on port
-	bpf: Add sanity check for upper ptr_limit
-	bpf: Simplify alu_limit masking for pointer arithmetic	
-	bpf: Fix off-by-one for area size in creating mask to left
-	ext4: check journal inode extents more carefully
-	ext4: don't allow overlapping system zones
-	ext4: handle error of ext4_setup_system_zone() on remount
+	ext4-handle-error-of-ext4_setup_system_zone-on-remount
+	ext4-don-t-allow-overlapping-system-zones
+	ext4-check-journal-inode-extents-more-carefully
+	bpf-fix-off-by-one-for-area-size-in-creating-mask-to-left
+	bpf-simplify-alu_limit-masking-for-pointer-arithmetic
+	bpf-add-sanity-check-for-upper-ptr_limit
+	net-dsa-b53-support-setting-learning-on-port
 	bpf-prohibit-alu-ops-for-pointer-types-not-defining-ptr_limit
 	revert-pm-runtime-update-device-status-before-letting-suppliers-suspend
 	perf-tools-use-define-api.pure-full-instead-of-pure-parser
@@ -22,6 +22,28 @@ Upstream 4.14.226 -> 227-rc
 	svcrdma-disable-timeouts-on-rdma-backchannel
 	sunrpc-fix-refcount-leak-for-rpc-auth-modules
 	net-qrtr-fix-__netdev_alloc_skb-call
+	scsi-lpfc-fix-some-error-codes-in-debugfs
+	nvme-rdma-fix-possible-hang-when-failing-to-set-io-q
+	usb-storage-add-quirk-to-defeat-kindle-s-automatic-unload
+	usb-replace-hardcode-maximum-usb-string-length-by-definition
+	usb-gadget-configfs-fix-kasan-use-after-free
+	iio-adc-stm32-adc-add-has_iomem-dependency
+	iio-adc-qcom-spmi-vadc-add-default-scale-to-lr_mux2_bat_id-channel
+	iio-adis16400-fix-an-error-code-in-adis16400_initial_setup
+	iio-gyro-mpu3050-fix-error-handling-in-mpu3050_trigger_handler
+	iio-hid-sensor-humidity-fix-alignment-issue-of-timestamp-channel
+	iio-hid-sensor-prox-fix-scale-not-correct-issue
+	iio-hid-sensor-temperature-fix-issues-of-timestamp-channel
+	pci-rpadlpar-fix-potential-drc_name-corruption-in-store-functions
+	perf-x86-intel-fix-a-crash-caused-by-zero-pebs-status
+	x86-ioapic-ignore-irq2-again
+	kernel-fs-introduce-and-use-set_restart_fn-and-arch_set_restart_data
+	x86-move-ts_compat-back-to-asm-thread_info.h
+	x86-introduce-ts_compat_restart-to-fix-get_nr_restart_syscall
+	ext4-find-old-entry-again-if-failed-to-rename-whiteout		
+	ext4-do-not-try-to-set-xattr-into-ea_inode-if-value-is-empty
+	ext4-fix-potential-error-in-ext4_do_update_inode
+	genirq-disable-interrupts-for-force-threaded-handlers
 	
 	-> unlocked all cpu freq from 300Mhz
 
