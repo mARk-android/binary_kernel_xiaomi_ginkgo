@@ -1,4 +1,4 @@
-# Kernel for Xiaomi Redmi Note 8/8T
+# Kernel for Xiaomi Redmi Note 8/8T 4.14.227 (stable-rc)
 
 Ginkgo Willow
 
