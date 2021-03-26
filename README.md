@@ -1,6 +1,6 @@
 # Kernel for Xiaomi Redmi Note 8/8T 4.14.228 (rc stable-queue)
 
-Ginkgo Willow
+Ginkgo Willow All image pre-rooted
 
 Using AnyKernel to make a flashable zip file with Image.gz-dtb
 
