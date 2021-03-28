@@ -1,9 +1,9 @@
 Changes in 4.14.228
-Upstream 4.14.228 -> 228-rc
+Upstream 4.14.228-rc1 -> 228-rc
 
 	net-fec-ptp-avoid-register-access-when-ipg-clock-is-
 	powerpc-4xx-fix-build-errors-from-mfdcr
-	atm-eni-dont-release-is-never-initialized	
+	atm-eni-dont-release-is-never-initialized
 	atm-lanai-dont-run-lanai_dev_close-if-not-open
 	revert-r8152-adjust-the-settings-about-mac-clock-spe
 	ixgbe-fix-memleak-in-ixgbe_configure_clsu32
@@ -22,6 +22,31 @@ Upstream 4.14.228 -> 228-rc
 	nfs-we-don-t-support-removing-system.nfs4_acl
 	ia64-fix-ia64_syscall_get_set_arguments-for-break-ba
 	ia64-fix-ptrace-ptrace_syscall_info_exit-sign
+	squashfs-fix-inode-lookup-sanity-checks
+	squashfs-fix-xattr-id-and-id-lookup-sanity-checks
+	arm64-dts-ls1046a-mark-crypto-engine-dma-coherent
+	arm64-dts-ls1012a-mark-crypto-engine-dma-coherent
+	arm64-dts-ls1043a-mark-crypto-engine-dma-coherent
+	arm-dts-at91-sama5d27_som1-fix-phy-address-to-7
+	dm-ioctl-fix-out-of-bounds-array-access-when-no-devices
+	bus-omap_l3_noc-mark-l3-irqs-as-irqf_no_thread
+	libbpf-fix-install-flag-order
+	macvlan-macvlan_count_rx-needs-to-be-aware-of-preemp
+	net-dsa-bcm_sf2-qualify-phydev-dev_flags-based-on-po
+	e1000e-add-rtnl_lock-to-e1000_reset_task
+	e1000e-fix-error-handling-in-e1000_set_d0_lplu_state
+	net-qlcnic-fix-a-use-after-free-in-qlcnic_83xx_get_m
+	ftgmac100-restart-mac-hw-once
+	can-peak_usb-add-forgotten-supported-devices
+	can-c_can_pci-c_can_pci_remove-fix-use-after-free
+	can-c_can-move-runtime-pm-enable-disable-to-c_can_pl
+	can-m_can-m_can_do_rx_poll-fix-extraneous-msg-loss-w
+	mac80211-fix-rate-mask-reset
+	net-cdc-phonet-fix-data-interface-release-on-probe-f
+	net-stmmac-dwmac-sun8i-provide-tx-and-rx-fifo-sizes
+	arm64-kdump-update-ppos-when-reading-elfcorehdr
+	net-mlx5e-fix-error-path-for-ethtool-set-priv-flag
+	rdma-cxgb4-fix-adapter-le-hash-errors-while-destroyi
 	make vsock virtio packet buff size configurable - msm
 	merge tag 'LA.UM.8.11.r1-05000-NICOBAR.0' into 10.0
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
