@@ -1,11 +1,23 @@
-# Kernel for Xiaomi Redmi Note 8/8T 4.14.228 (rc stable-queue)
+# Kernel for Xiaomi Redmi Note 8/8T 4.14.229 (stable-queue)
 
-Ginkgo Willow All image pre-rooted with Magisk
+<pre>                  
+                 _    _  _  _     _ _   _ _  
+    _  _ _ _    / \  |  _ \| | _ / _ \/ _ _|     
+   | '_ ` _ \  / _ \ | |_) | |/ / | | \_ _ \    
+   | | | | | |/ _,_ \|  _ <|   <| |_| |_ _) |   
+   |_| |_| |_/_/   \_\_| \_\_|\_|\_ _/ \_ _/     
+     K E R N E L • G I N K G O • W I L L O W                                      
+ </pre>
+ 
+            Xiaomi Redmi Note 8/8T    
+           by  mARk-android@github
+           
+**********************************************
 
-Using AnyKernel to make a flashable zip file with Image.gz-dtb
-
-or
-
-Android Image Kitchen (AIK) if you can get the factory boot.img file of your system. 
-Simply run unpacking.bat on the boot.img and replace the boot.img-zImage file inside split_img folder with your new image.gz-dtb file. 
-Then repackimg.bat will generate a new boot.img file for you.
+              +-+-+-+-+-+-+-+-+
+              |m|A|R|k|O|S|
+              +-+-+-+-+-+-+-+-+
+     K E R N E L • G I N K G O • W I L L O W
+                  .2021
+           
+**********************************************  

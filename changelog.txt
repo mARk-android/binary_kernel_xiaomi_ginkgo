@@ -1,103 +1,145 @@
+===========================================================
+Changes in 4.14.229
+Upstream 4.14.228 -> 229-rc2
+===========================================================
+
+selinux-vsock-set-sid-for-socket-returned-by-accept
+ipv6-weaken-the-v4mapped-source-check
+ext4-fix-bh-ref-count-on-error-paths
+rpc-fix-null-dereference-on-kmalloc-failure
+asoc-rt5640-fix-dac-and-adc-vol-tlv-values-being-off
+asoc-rt5651-fix-dac-and-adc-vol-tlv-values-being-off
+asoc-sgtl5000-set-dap_avc_ctrl-register-to-correct-d
+asoc-es8316-simplify-adc_pga_gain_tlv-table
+asoc-cs42l42-fix-mixer-volume-control
+asoc-cs42l42-always-wait-at-least-3ms-after-reset
+powerpc-force-inlining-of-cpu_has_feature-to-avoid-b
+vhost-fix-vhost_vq_reset
+scsi-st-fix-a-use-after-free-in-st_open
+scsi-qla2xxx-fix-broken-endif-placement
+staging-comedi-cb_pcidas-fix-request_irq-warn
+staging-comedi-cb_pcidas64-fix-request_irq-warn
+asoc-rt5659-update-mclk-rate-in-set_sysclk
+ext4-do-not-iput-inode-under-running-transaction-in
+
++ ccache clang
+
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+kbuild: Disable extra debugging info in .s output 
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+FTRACE_MCOUNT_USE_OBJTOOL
+FTRACE_MCOUNT_USE_RECORDMCOUNT
+
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+DEFCONFIG - some changes
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+CONFIG_BLK_DEV_LOOP_MIN_COUNT=0
+Don't pre-create any loop devices
+This allows to reduce boot time slightly 
+and save resources on ROMs that
+don't use updatable APEXs. 
+ROMs that do use updatable APEXs need ~30
+loop devices anyway, so this doesn't change much.
+
+
+CONFIG_THINLTO=y
+Enable ThinLTO optimizations
+ThinLTO is actually quite fast 
+on multi-threaded systems now 
+and doesn't increase build times.
+
+CONFIG_ARM64_SW_TTBR0_PAN is not set 
+improvement 7% syscall, 7.8% libc
+
+CONFIG_QCOM_QHEE_ENABLE_MEM_PROTECTION 
+Disable QHEE kernel memory protection
+
+
+# CONFIG_AUDIT is not set
+# CONFIG_LOG_CPU_MAX_BUF_SHIFT=17
+CONFIG_LOG_BUF_SHIFT=17 -> 21
+Simplify log buffer allocation 
+
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Makefile - some changes
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+mod_compress_cmd = $(XZ) ((((--lzma2=dict=2MiB )))) -f
+CONFIG_FTRACE_MCOUNT_USE_OBJTOOL
+CONFIG_FTRACE_MCOUNT_USE_CC
+BUILD_CFLAGS += call cc-option -> DEBUG_CFLAGS
+
+
+
+
+===========================================================
 Changes in 4.14.228
-Upstream 4.14.228-rc1 -> 228-rc
+Upstream 4.14.228-rc1 -> 228
+===========================================================
 
-	net-fec-ptp-avoid-register-access-when-ipg-clock-is-
-	powerpc-4xx-fix-build-errors-from-mfdcr
-	atm-eni-dont-release-is-never-initialized
-	atm-lanai-dont-run-lanai_dev_close-if-not-open
-	revert-r8152-adjust-the-settings-about-mac-clock-spe
-	ixgbe-fix-memleak-in-ixgbe_configure_clsu32
-	net-tehuti-fix-error-return-code-in-bdx_probe
-	sun-niu-fix-wrong-rxmac_bc_frm_cnt_count-count
-	gpiolib-acpi-add-missing-irqf_oneshot
-	nfs-fix-pnfs_flexfile_layout-kconfig-default
-	nfs-correct-size-calculation-for-create-reply-length
-	net-hisilicon-hns-fix-error-return-code-of-hns_nic_c
-	net-wan-fix-error-return-code-of-uhdlc_init
-	atm-upd98402-fix-incorrect-allocation
-	atm-idt77252-fix-null-ptr-dereference
-	sparc64-fix-opcode-filtering-in-handling-of-no-fault
-	u64_stats-lockdep-fix-u64_stats_init-vs-lockdep
-	drm-radeon-fix-agp-dependency
-	nfs-we-don-t-support-removing-system.nfs4_acl
-	ia64-fix-ia64_syscall_get_set_arguments-for-break-ba
-	ia64-fix-ptrace-ptrace_syscall_info_exit-sign
-	squashfs-fix-inode-lookup-sanity-checks
-	squashfs-fix-xattr-id-and-id-lookup-sanity-checks
-	arm64-dts-ls1046a-mark-crypto-engine-dma-coherent
-	arm64-dts-ls1012a-mark-crypto-engine-dma-coherent
-	arm64-dts-ls1043a-mark-crypto-engine-dma-coherent
-	arm-dts-at91-sama5d27_som1-fix-phy-address-to-7
-	dm-ioctl-fix-out-of-bounds-array-access-when-no-devices
-	bus-omap_l3_noc-mark-l3-irqs-as-irqf_no_thread
-	libbpf-fix-install-flag-order
-	macvlan-macvlan_count_rx-needs-to-be-aware-of-preemp
-	net-dsa-bcm_sf2-qualify-phydev-dev_flags-based-on-po
-	e1000e-add-rtnl_lock-to-e1000_reset_task
-	e1000e-fix-error-handling-in-e1000_set_d0_lplu_state
-	net-qlcnic-fix-a-use-after-free-in-qlcnic_83xx_get_m
-	ftgmac100-restart-mac-hw-once
-	can-peak_usb-add-forgotten-supported-devices
-	can-c_can_pci-c_can_pci_remove-fix-use-after-free
-	can-c_can-move-runtime-pm-enable-disable-to-c_can_pl
-	can-m_can-m_can_do_rx_poll-fix-extraneous-msg-loss-w
-	mac80211-fix-rate-mask-reset
-	net-cdc-phonet-fix-data-interface-release-on-probe-f
-	net-stmmac-dwmac-sun8i-provide-tx-and-rx-fifo-sizes
-	arm64-kdump-update-ppos-when-reading-elfcorehdr
-	net-mlx5e-fix-error-path-for-ethtool-set-priv-flag
-	rdma-cxgb4-fix-adapter-le-hash-errors-while-destroyi
-	make vsock virtio packet buff size configurable - msm
-	merge tag 'LA.UM.8.11.r1-05000-NICOBAR.0' into 10.0
+drm-msm-fix-shutdown-hook-in-case-gpu-components-fai
+can-dev-move-device-back-to-init-netns-on-owning-netns-delete
+ext4-add-reclaim-checks-to-xattr-code
+locking-mutex-fix-non-debug-version-of-mac80211-fix-double-free-in-ibss_leave
+net-qrtr-fix-a-kernel-infoleak-in-qrtr_recvmsg
+net-sched-validate-stab-values
+perf-auxtrace-fix-auxtrace-queue-conflict
+scsi-mpt3sas-fix-error-return-code-of-mpt3sas_base_a
+scsi-qedi-fix-error-return-code-of-qedi_alloc_global
+can-peak_usb-revert-can-peak_usb-add-forgotten-supported-devices
+acpi-scan-rearrange-memory-allocation-in-acpi_device
+acpi-scan-use-unique-number-for-instance_no
+net-fec-ptp-avoid-register-access-when-ipg-clock-is-
+powerpc-4xx-fix-build-errors-from-mfdcr
+atm-eni-dont-release-is-never-initialized
+atm-lanai-dont-run-lanai_dev_close-if-not-open
+revert-r8152-adjust-the-settings-about-mac-clock-spe
+ixgbe-fix-memleak-in-ixgbe_configure_clsu32
+net-tehuti-fix-error-return-code-in-bdx_probe
+sun-niu-fix-wrong-rxmac_bc_frm_cnt_count-count
+gpiolib-acpi-add-missing-irqf_oneshot
+nfs-fix-pnfs_flexfile_layout-kconfig-default
+nfs-correct-size-calculation-for-create-reply-length
+net-hisilicon-hns-fix-error-return-code-of-hns_nic_c
+net-wan-fix-error-return-code-of-uhdlc_init
+atm-upd98402-fix-incorrect-allocation
+atm-idt77252-fix-null-ptr-dereference
+sparc64-fix-opcode-filtering-in-handling-of-no-fault
+u64_stats-lockdep-fix-u64_stats_init-vs-lockdep
+drm-radeon-fix-agp-dependency
+nfs-we-don-t-support-removing-system.nfs4_acl
+ia64-fix-ia64_syscall_get_set_arguments-for-break-ba
+ia64-fix-ptrace-ptrace_syscall_info_exit-sign
+squashfs-fix-inode-lookup-sanity-checks
+squashfs-fix-xattr-id-and-id-lookup-sanity-checks
+arm64-dts-ls1046a-mark-crypto-engine-dma-coherent
+arm64-dts-ls1012a-mark-crypto-engine-dma-coherent
+arm64-dts-ls1043a-mark-crypto-engine-dma-coherent
+arm-dts-at91-sama5d27_som1-fix-phy-address-to-7
+dm-ioctl-fix-out-of-bounds-array-access-when-no-devices
+bus-omap_l3_noc-mark-l3-irqs-as-irqf_no_thread
+libbpf-fix-install-flag-order
+macvlan-macvlan_count_rx-needs-to-be-aware-of-preemp
+net-dsa-bcm_sf2-qualify-phydev-dev_flags-based-on-po
+e1000e-add-rtnl_lock-to-e1000_reset_task
+e1000e-fix-error-handling-in-e1000_set_d0_lplu_state
+net-qlcnic-fix-a-use-after-free-in-qlcnic_83xx_get_m
+ftgmac100-restart-mac-hw-once
+can-peak_usb-add-forgotten-supported-devices
+can-c_can_pci-c_can_pci_remove-fix-use-after-free
+can-c_can-move-runtime-pm-enable-disable-to-c_can_pl
+can-m_can-m_can_do_rx_poll-fix-extraneous-msg-loss-w
+mac80211-fix-rate-mask-reset
+net-cdc-phonet-fix-data-interface-release-on-probe-f
+net-stmmac-dwmac-sun8i-provide-tx-and-rx-fifo-sizes
+arm64-kdump-update-ppos-when-reading-elfcorehdr
+net-mlx5e-fix-error-path-for-ethtool-set-priv-flag
+rdma-cxgb4-fix-adapter-le-hash-errors-while-destroyi
+xen-blkback-don-t-leak-persistent-grants-from
+make vsock virtio packet buff size configurable - msm
+merge tag 'LA.UM.8.11.r1-05000-NICOBAR.0' into 10.0
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-
-Changes in 4.14.227-rc
-Upstream 4.14.227-rc1 -> 227-rc
-
-	ext4-handle-error-of-ext4_setup_system_zone-on-remount
-	ext4-don-t-allow-overlapping-system-zones
-	ext4-check-journal-inode-extents-more-carefully
-	bpf-fix-off-by-one-for-area-size-in-creating-mask-to-left
-	bpf-simplify-alu_limit-masking-for-pointer-arithmetic
-	bpf-add-sanity-check-for-upper-ptr_limit
-	net-dsa-b53-support-setting-learning-on-port
-	bpf-prohibit-alu-ops-for-pointer-types-not-defining-ptr_limit
-	revert-pm-runtime-update-device-status-before-letting-suppliers-suspend
-	perf-tools-use-define-api.pure-full-instead-of-pure-parser
-	tools-build-feature-check-if-get_current_dir_name-is-available
-	tools-build-feature-check-if-eventfd-is-available
-	tools-build-check-if-gettid-is-available-before-providing-helper
-	perf-make-perf-able-to-build-with-latest-libbfd
-	tools-build-feature-check-if-pthread_barrier_t-is-available
-	btrfs-fix-race-when-cloning-extent-buffer-during-rewind-of-an-old-root
-	nvmet-don-t-check-iosqes-iocqes-for-discovery-controllers
-	nfsd-repair-misuse-of-sv_lock-in-5.10.16-rt30
-	svcrdma-disable-timeouts-on-rdma-backchannel
-	sunrpc-fix-refcount-leak-for-rpc-auth-modules
-	net-qrtr-fix-__netdev_alloc_skb-call
-	scsi-lpfc-fix-some-error-codes-in-debugfs
-	nvme-rdma-fix-possible-hang-when-failing-to-set-io-q
-	usb-storage-add-quirk-to-defeat-kindle-s-automatic-unload
-	usb-replace-hardcode-maximum-usb-string-length-by-definition
-	usb-gadget-configfs-fix-kasan-use-after-free
-	iio-adc-stm32-adc-add-has_iomem-dependency
-	iio-adc-qcom-spmi-vadc-add-default-scale-to-lr_mux2_bat_id-channel
-	iio-adis16400-fix-an-error-code-in-adis16400_initial_setup
-	iio-gyro-mpu3050-fix-error-handling-in-mpu3050_trigger_handler
-	iio-hid-sensor-humidity-fix-alignment-issue-of-timestamp-channel
-	iio-hid-sensor-prox-fix-scale-not-correct-issue
-	iio-hid-sensor-temperature-fix-issues-of-timestamp-channel
-	pci-rpadlpar-fix-potential-drc_name-corruption-in-store-functions
-	perf-x86-intel-fix-a-crash-caused-by-zero-pebs-status
-	x86-ioapic-ignore-irq2-again
-	kernel-fs-introduce-and-use-set_restart_fn-and-arch_set_restart_data
-	x86-move-ts_compat-back-to-asm-thread_info.h
-	x86-introduce-ts_compat_restart-to-fix-get_nr_restart_syscall
-	ext4-find-old-entry-again-if-failed-to-rename-whiteout		
-	ext4-do-not-try-to-set-xattr-into-ea_inode-if-value-is-empty
-	ext4-fix-potential-error-in-ext4_do_update_inode
-	genirq-disable-interrupts-for-force-threaded-handlers
-	
-	-> unlocked all cpu freq from 300Mhz
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
