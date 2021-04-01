@@ -1,7 +1,7 @@
-===========================================================
+=================================================
 Changes in 4.14.229
 Upstream 4.14.228 -> 229-rc2
-===========================================================
+=================================================
 
 selinux-vsock-set-sid-for-socket-returned-by-accept
 ipv6-weaken-the-v4mapped-source-check
@@ -20,21 +20,28 @@ scsi-qla2xxx-fix-broken-endif-placement
 staging-comedi-cb_pcidas-fix-request_irq-warn
 staging-comedi-cb_pcidas64-fix-request_irq-warn
 asoc-rt5659-update-mclk-rate-in-set_sysclk
-ext4-do-not-iput-inode-under-running-transaction-in
+ext4-do-not-iput-inode-under-running-transaction-in-
+can-dev-move-driver-related-infrastructure-into-sepa
+brcmfmac-clear-eap-association-status-bits-on-linkdo
+net-ethernet-aquantia-handle-error-cleanup-of-start-
+appletalk-fix-skb-allocation-size-in-loopback-case
+net-wan-lmc-unregister-device-when-no-matching-devic
 
 + ccache clang
-
-
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-kbuild: Disable extra debugging info in .s output 
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
++ below are some added changes
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+kbuild: some changes
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+tracing: add support for objtool mcount
 FTRACE_MCOUNT_USE_OBJTOOL
 FTRACE_MCOUNT_USE_RECORDMCOUNT
+kbuild: Disable extra debugging info in .s output 
+kbuild: use KBUILD_DEFCONFIG as the fallback for DEFCONFIG_LIST
 
 
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 DEFCONFIG - some changes
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 CONFIG_BLK_DEV_LOOP_MIN_COUNT=0
 Don't pre-create any loop devices
@@ -64,82 +71,22 @@ CONFIG_LOG_BUF_SHIFT=17 -> 21
 Simplify log buffer allocation 
 
 
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 Makefile - some changes
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-mod_compress_cmd = $(XZ) ((((--lzma2=dict=2MiB )))) -f
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+use smaller dict. size for xz module compression of default 8 MB
+mod_compress_cmd = $(XZ) --lzma2=dict=2MiB -f
+tracing: add support for objtool mcount
 CONFIG_FTRACE_MCOUNT_USE_OBJTOOL
 CONFIG_FTRACE_MCOUNT_USE_CC
 BUILD_CFLAGS += call cc-option -> DEBUG_CFLAGS
+Force default ARCH to be arm64
+BACKPORT: FROMLIST: kbuild: generate autoksyms.h early 
+kbuild: stop removing stale <linux/version.h> file 
+kbuild: make DWARF version a choice
+ 
+Use -O3 optimizations line: 366, 368
 
-
-
-
-===========================================================
-Changes in 4.14.228
-Upstream 4.14.228-rc1 -> 228
-===========================================================
-
-drm-msm-fix-shutdown-hook-in-case-gpu-components-fai
-can-dev-move-device-back-to-init-netns-on-owning-netns-delete
-ext4-add-reclaim-checks-to-xattr-code
-locking-mutex-fix-non-debug-version-of-mac80211-fix-double-free-in-ibss_leave
-net-qrtr-fix-a-kernel-infoleak-in-qrtr_recvmsg
-net-sched-validate-stab-values
-perf-auxtrace-fix-auxtrace-queue-conflict
-scsi-mpt3sas-fix-error-return-code-of-mpt3sas_base_a
-scsi-qedi-fix-error-return-code-of-qedi_alloc_global
-can-peak_usb-revert-can-peak_usb-add-forgotten-supported-devices
-acpi-scan-rearrange-memory-allocation-in-acpi_device
-acpi-scan-use-unique-number-for-instance_no
-net-fec-ptp-avoid-register-access-when-ipg-clock-is-
-powerpc-4xx-fix-build-errors-from-mfdcr
-atm-eni-dont-release-is-never-initialized
-atm-lanai-dont-run-lanai_dev_close-if-not-open
-revert-r8152-adjust-the-settings-about-mac-clock-spe
-ixgbe-fix-memleak-in-ixgbe_configure_clsu32
-net-tehuti-fix-error-return-code-in-bdx_probe
-sun-niu-fix-wrong-rxmac_bc_frm_cnt_count-count
-gpiolib-acpi-add-missing-irqf_oneshot
-nfs-fix-pnfs_flexfile_layout-kconfig-default
-nfs-correct-size-calculation-for-create-reply-length
-net-hisilicon-hns-fix-error-return-code-of-hns_nic_c
-net-wan-fix-error-return-code-of-uhdlc_init
-atm-upd98402-fix-incorrect-allocation
-atm-idt77252-fix-null-ptr-dereference
-sparc64-fix-opcode-filtering-in-handling-of-no-fault
-u64_stats-lockdep-fix-u64_stats_init-vs-lockdep
-drm-radeon-fix-agp-dependency
-nfs-we-don-t-support-removing-system.nfs4_acl
-ia64-fix-ia64_syscall_get_set_arguments-for-break-ba
-ia64-fix-ptrace-ptrace_syscall_info_exit-sign
-squashfs-fix-inode-lookup-sanity-checks
-squashfs-fix-xattr-id-and-id-lookup-sanity-checks
-arm64-dts-ls1046a-mark-crypto-engine-dma-coherent
-arm64-dts-ls1012a-mark-crypto-engine-dma-coherent
-arm64-dts-ls1043a-mark-crypto-engine-dma-coherent
-arm-dts-at91-sama5d27_som1-fix-phy-address-to-7
-dm-ioctl-fix-out-of-bounds-array-access-when-no-devices
-bus-omap_l3_noc-mark-l3-irqs-as-irqf_no_thread
-libbpf-fix-install-flag-order
-macvlan-macvlan_count_rx-needs-to-be-aware-of-preemp
-net-dsa-bcm_sf2-qualify-phydev-dev_flags-based-on-po
-e1000e-add-rtnl_lock-to-e1000_reset_task
-e1000e-fix-error-handling-in-e1000_set_d0_lplu_state
-net-qlcnic-fix-a-use-after-free-in-qlcnic_83xx_get_m
-ftgmac100-restart-mac-hw-once
-can-peak_usb-add-forgotten-supported-devices
-can-c_can_pci-c_can_pci_remove-fix-use-after-free
-can-c_can-move-runtime-pm-enable-disable-to-c_can_pl
-can-m_can-m_can_do_rx_poll-fix-extraneous-msg-loss-w
-mac80211-fix-rate-mask-reset
-net-cdc-phonet-fix-data-interface-release-on-probe-f
-net-stmmac-dwmac-sun8i-provide-tx-and-rx-fifo-sizes
-arm64-kdump-update-ppos-when-reading-elfcorehdr
-net-mlx5e-fix-error-path-for-ethtool-set-priv-flag
-rdma-cxgb4-fix-adapter-le-hash-errors-while-destroyi
-xen-blkback-don-t-leak-persistent-grants-from
-make vsock virtio packet buff size configurable - msm
-merge tag 'LA.UM.8.11.r1-05000-NICOBAR.0' into 10.0
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+CC_FLAGS_LTO
+CONFIG_LTOCLANG_THIN
 
