@@ -26,5 +26,5 @@
 <h2>Donations/Tips</h2>
 <p>Please donate below!</p>
 <p><a href="https://www.paypal.com/paypalme/mARkOSpp" rel="nofollow"><img src="https://www.paypalobjects.com/webstatic/mktg/Logo/pp-logo-100px.png" border="0" alt="PayPal Logo"></a></p>
-<p><a href="PayPal.Me/mARkOSpp" rel="nofollow">PayPal.Me/mARkOSpp</a></p>
+<p><a href="https://PayPal.Me/mARkOSpp" rel="nofollow">PayPal.Me/mARkOSpp</a></p>
 
