@@ -3,6 +3,8 @@ Changes in 4.14.229
 Upstream 4.14.229-rc1 -> 229-rc
 =================================================
 
+-> more BIG cluster frequencies  added
+
 extcon-add-stubs-for-extcon_register_notifier_all-fu
 extcon-fix-error-handling-in-extcon_dev_register
 firewire-nosy-fix-a-use-after-free-bug-in-nosy_ioctl
