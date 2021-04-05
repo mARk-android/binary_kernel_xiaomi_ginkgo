@@ -1,5 +1,5 @@
 # Kernel for Xiaomi Redmi Note 8/8T 4.14.229 
-<h3>(stable-queue)</h3>
+# (stable-queue)
 
 <pre>                  
                  _    _  _  _     _ _   _ _  
@@ -22,9 +22,3 @@
                   .2021
            
 **********************************************  
-
-<h2>Donations/Tips</h2>
-<p>Please donate below!</p>
-<p><a href="https://www.paypal.com/paypalme/mARkOSpp" rel="nofollow" target="_blank"><img src="https://www.paypalobjects.com/webstatic/mktg/Logo/pp-logo-100px.png" border="0" alt="PayPal Logo"></a></p>
-<p><a href="https://PayPal.Me/mARkOSpp" rel="nofollow" target="_blank">PayPal.Me/mARkOSpp</a></p>
-

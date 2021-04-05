@@ -1,7 +1,24 @@
 =================================================
 Changes in 4.14.229
-Upstream 4.14.228 -> 229-rc2
+Upstream 4.14.229-rc1 -> 229-rc
 =================================================
+
+extcon-add-stubs-for-extcon_register_notifier_all-fu
+extcon-fix-error-handling-in-extcon_dev_register
+firewire-nosy-fix-a-use-after-free-bug-in-nosy_ioctl
+usbip-vhci_hcd-fix-shift-out-of-bounds-in-vhci_hub_control
+usb-quirks-ignore-remote-wake-up-on-fibocom-l850-gl-lte-modem
+usb-musb-fix-suspend-with-devices-connected-for-a64
+usb-xhci-mtk-fix-broken-streams-issue-on-0.96-xhci
+cdc-acm-fix-break-rx-code-path-adding-necessary-calls
+usb-cdc-acm-untangle-a-circular-dependency-between-callback-and-softint
+usb-cdc-acm-downgrade-message-to-debug
+usb-cdc-acm-fix-use-after-free-after-probe-failure
+usb-gadget-udc-amd5536udc_pci-fix-null-ptr-dereference
+staging-rtl8192e-fix-incorrect-source-in-memcpy
+staging-rtl8192e-change-state-information-from-u16-to-u8
+drivers-video-fbcon-fix-null-dereference-in-fbcon_cursor
+*****************************************************
 
 selinux-vsock-set-sid-for-socket-returned-by-accept
 ipv6-weaken-the-v4mapped-source-check
@@ -21,72 +38,23 @@ staging-comedi-cb_pcidas-fix-request_irq-warn
 staging-comedi-cb_pcidas64-fix-request_irq-warn
 asoc-rt5659-update-mclk-rate-in-set_sysclk
 ext4-do-not-iput-inode-under-running-transaction-in-
-can-dev-move-driver-related-infrastructure-into-sepa
 brcmfmac-clear-eap-association-status-bits-on-linkdo
 net-ethernet-aquantia-handle-error-cleanup-of-start-
 appletalk-fix-skb-allocation-size-in-loopback-case
 net-wan-lmc-unregister-device-when-no-matching-devic
-
-+ ccache clang
-+ below are some added changes
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-kbuild: some changes
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-tracing: add support for objtool mcount
-FTRACE_MCOUNT_USE_OBJTOOL
-FTRACE_MCOUNT_USE_RECORDMCOUNT
-kbuild: Disable extra debugging info in .s output 
-kbuild: use KBUILD_DEFCONFIG as the fallback for DEFCONFIG_LIST
-
-
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-DEFCONFIG - some changes
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-
-CONFIG_BLK_DEV_LOOP_MIN_COUNT=0
-Don't pre-create any loop devices
-This allows to reduce boot time slightly 
-and save resources on ROMs that
-don't use updatable APEXs. 
-ROMs that do use updatable APEXs need ~30
-loop devices anyway, so this doesn't change much.
-
-
-CONFIG_THINLTO=y
-Enable ThinLTO optimizations
-ThinLTO is actually quite fast 
-on multi-threaded systems now 
-and doesn't increase build times.
-
-CONFIG_ARM64_SW_TTBR0_PAN is not set 
-improvement 7% syscall, 7.8% libc
-
-CONFIG_QCOM_QHEE_ENABLE_MEM_PROTECTION 
-Disable QHEE kernel memory protection
-
-
-# CONFIG_AUDIT is not set
-# CONFIG_LOG_CPU_MAX_BUF_SHIFT=17
-CONFIG_LOG_BUF_SHIFT=17 -> 21
-Simplify log buffer allocation 
-
-
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-Makefile - some changes
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-use smaller dict. size for xz module compression of default 8 MB
-mod_compress_cmd = $(XZ) --lzma2=dict=2MiB -f
-tracing: add support for objtool mcount
-CONFIG_FTRACE_MCOUNT_USE_OBJTOOL
-CONFIG_FTRACE_MCOUNT_USE_CC
-BUILD_CFLAGS += call cc-option -> DEBUG_CFLAGS
-Force default ARCH to be arm64
-BACKPORT: FROMLIST: kbuild: generate autoksyms.h early 
-kbuild: stop removing stale <linux/version.h> file 
-kbuild: make DWARF version a choice
- 
-Use -O3 optimizations line: 366, 368
-
-CC_FLAGS_LTO
-CONFIG_LTOCLANG_THIN
-
+bpf-remove-mtu-check-in-__bpf_skb_max_len
+alsa-usb-audio-apply-sample-rate-quirk-to-logitech-connect
+alsa-hda-realtek-fix-a-determine_headset_type-issue-for-a-dell-aio
+alsa-hda-realtek-call-alc_update_headset_mode-in-hp_automute_hook
+tracing-fix-stack-trace-event-size
+mm-fix-race-by-making-init_zero_pfn-early_initcall
+drm-amdgpu-fix-offset-calculation-in-amdgpu_vm_bo_clear_mappings
+drm-amdgpu-check-alignment-on-cpu-page-for-bo-map
+reiserfs-update-reiserfs_xattrs_initialized-condition
+mm-memcontrol-fix-nr_writeback-leak-in-memcg-and-system-stats
+mm-memcg-make-sure-memory.events-is-uptodate-when-waking-pollers
+mem_cgroup-make-sure-moving_account-move_lock_task-and-stat_cpu-in-the-same-cacheline
+mm-fix-oom_kill-event-handling
+mm-writeback-use-exact-memcg-dirty-counts
+pinctrl-rockchip-fix-restore-error-in-resume
+*****************************************************
