@@ -1,28 +1,51 @@
 =================================================
 Changes in 4.14.229
-Upstream 4.14.229-rc1 -> 229-rc
+boot•mARkOS•4.14.229•MiuiQ•A10•ginkgo•willow-20210407-1303.zip
 =================================================
+Misc improvements:
+Use only for devices with more than 4GB ram
+Add full CPU frequency tables
 
--> more BIG cluster frequencies  added
--> Merge tag LA.UM.8.1.r1-16900-sm8150.0
+HARDCODED:
 
+vm_swappiness = 160;      mm/vmscan.c
+max_swappiness = 200;     kernel/sysctl.c
+default page-cluster = 0; mm/swap.c 
 
-extcon-add-stubs-for-extcon_register_notifier_all-fu
-extcon-fix-error-handling-in-extcon_dev_register
-firewire-nosy-fix-a-use-after-free-bug-in-nosy_ioctl
-usbip-vhci_hcd-fix-shift-out-of-bounds-in-vhci_hub_control
-usb-quirks-ignore-remote-wake-up-on-fibocom-l850-gl-lte-modem
-usb-musb-fix-suspend-with-devices-connected-for-a64
-usb-xhci-mtk-fix-broken-streams-issue-on-0.96-xhci
-cdc-acm-fix-break-rx-code-path-adding-necessary-calls
-usb-cdc-acm-untangle-a-circular-dependency-between-callback-and-softint
-usb-cdc-acm-downgrade-message-to-debug
-usb-cdc-acm-fix-use-after-free-after-probe-failure
-usb-gadget-udc-amd5536udc_pci-fix-null-ptr-dereference
-staging-rtl8192e-fix-incorrect-source-in-memcpy
-staging-rtl8192e-change-state-information-from-u16-to-u8
-drivers-video-fbcon-fix-null-dereference-in-fbcon_cursor
+Change struct zygote*_pid to atomic 
+
+Boost CPU->max for 500ms whenever a zygote-forked process becomes a top app
+Boost CPU->max for 150ms when userspace launches an app 
+
+defconfig: Disable Privileged Access Never (PAN) emulation 
+
+soc: qcom: scm.c: Fix scm_call_count when used with LSE atomics 
+
 *****************************************************
+
+cpuidle: Optimize pm_qos notifier callback and IPI semantics
+
+simple_lmk: Add !PSI dependency 
+simple_lmk: Print a message when the timeout is reached 
+
+binder: Fix log spam caused by interrupted waits 
+
+proc: Kill facebook crap background 
+
+=================================================
+Changes in 4.14.229
+boot•mARkOS•4.14.229•MiuiQ•A10•ginkgo•willow-20210407-1206.zip
+=================================================
+Compiled QCA_CLD_WLAN as module
+
+
+
+
+
+
+
+Patch list:
+
 
 selinux-vsock-set-sid-for-socket-returned-by-accept
 ipv6-weaken-the-v4mapped-source-check
@@ -61,4 +84,18 @@ mem_cgroup-make-sure-moving_account-move_lock_task-and-stat_cpu-in-the-same-cach
 mm-fix-oom_kill-event-handling
 mm-writeback-use-exact-memcg-dirty-counts
 pinctrl-rockchip-fix-restore-error-in-resume
-*****************************************************
+extcon-add-stubs-for-extcon_register_notifier_all-fu
+extcon-fix-error-handling-in-extcon_dev_register
+firewire-nosy-fix-a-use-after-free-bug-in-nosy_ioctl
+usbip-vhci_hcd-fix-shift-out-of-bounds-in-vhci_hub_control
+usb-quirks-ignore-remote-wake-up-on-fibocom-l850-gl-lte-modem
+usb-musb-fix-suspend-with-devices-connected-for-a64
+usb-xhci-mtk-fix-broken-streams-issue-on-0.96-xhci
+cdc-acm-fix-break-rx-code-path-adding-necessary-calls
+usb-cdc-acm-untangle-a-circular-dependency-between-callback-and-softint
+usb-cdc-acm-downgrade-message-to-debug
+usb-cdc-acm-fix-use-after-free-after-probe-failure
+usb-gadget-udc-amd5536udc_pci-fix-null-ptr-dereference
+staging-rtl8192e-fix-incorrect-source-in-memcpy
+staging-rtl8192e-change-state-information-from-u16-to-u8
+drivers-video-fbcon-fix-null-dereference-in-fbcon_cursor
