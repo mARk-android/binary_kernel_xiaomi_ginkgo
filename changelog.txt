@@ -1,101 +1,84 @@
 =================================================
-Changes in 4.14.229
-boot•mARkOS•4.14.229•MiuiQ•A10•ginkgo•willow-20210407-1303.zip
+Changes in 4.14.230
 =================================================
-Misc improvements:
-Use only for devices with more than 4GB ram
-Add full CPU frequency tables
-
+ 
+kernel/sched/tune: Refactor SchedTune Assist code
+*****************************************************
+ 
+- Return proper values when write wrappers aren't bypassed
+- Revise Kconfig description
+- Improve overall code style
+- Don't write colocate and sched_boost_no_override values 
+     when WALT is disabled
+- Mark static data as static
+- Improve readability of log messages
+- Propagate cftype struct in write wrappers
+- Use task_is_booster helper rather than hard-coded "init" check      
+- Only force UX tasks to big cores 
+- boost   -> 0-100
+- write_default_values top-app	1, 1, 0, 1
+ 
+ 
+simple_lmk: 
+*****************************************************
+Add !PSI dependency 
+Print a message when the timeout is reached 
+Update adj targeting priority for Android 10
+ 
+ 
+Other changes:
+*****************************************************
+dtsi: busy-cost-data =  sched energy
+binder: Fix log spam caused by interrupted waits 
+proc: Kill facebook crap background 
+soc: qcom: scm: Fix scm_call_count when used with LSE atomics 
+fs: exec: Introduce is_zygote_pid() 
+cpuidle: Optimize pm_qos notifier callback and IPI semantics
+rcu: fix a performance regression Add WQ_POWER_EFFICIENT
+sched: features: Disable EAS_PREFER_IDLE 
+revert f2fs: Fix deadlock between f2fs_quota_sync and block_operation 
+drivers: scsi: ufs: Scrap Qualcomm's PM QoS implementation 
+drivers: scsi: ufs: Add simple IRQ-affined PM QoS operations  
+msm: kgsl: Remove L2PC PM QoS feature 
+msm: camera: Fix memory leak in cam_res_mgr_probe() 
+drm: msm: sde: Skip prefill calculations on command mode panels 
+qcacmn: Disable all of qdf_trace when WLAN_DEBUG is disabled
+Revert kernel: power: qos: Use effective affinity mask  
+ 
+  
 HARDCODED:
+*****************************************************
+kernel: sysctl: max_swappiness = 200;  
+mm: swap: default page-cluster = 0; 
+mm: vmscan" vm_swappiness = 160; 
 
-vm_swappiness = 160;      mm/vmscan.c
-max_swappiness = 200;     kernel/sysctl.c
-default page-cluster = 0; mm/swap.c 
 
-Change struct zygote*_pid to atomic 
 
 Boost CPU->max for 500ms whenever a zygote-forked process becomes a top app
 Boost CPU->max for 150ms when userspace launches an app 
 
-defconfig: Disable Privileged Access Never (PAN) emulation 
-
-soc: qcom: scm.c: Fix scm_call_count when used with LSE atomics 
-
+defconfig: Disable Privileged Access Never (PAN) emulation ARM64_SW_TTBR0_PAN
+ 
+ 
+Misc improvements:
 *****************************************************
-
-cpuidle: Optimize pm_qos notifier callback and IPI semantics
-
-simple_lmk: Add !PSI dependency 
-simple_lmk: Print a message when the timeout is reached 
-
-binder: Fix log spam caused by interrupted waits 
-
-proc: Kill facebook crap background 
-
-=================================================
-Changes in 4.14.229
-boot•mARkOS•4.14.229•MiuiQ•A10•ginkgo•willow-20210407-1206.zip
-=================================================
-Compiled QCA_CLD_WLAN as module
-
-
-
-
-
-
-
+Add full CPU frequency tables
+ 
+ 
 Patch list:
-
-
-selinux-vsock-set-sid-for-socket-returned-by-accept
-ipv6-weaken-the-v4mapped-source-check
-ext4-fix-bh-ref-count-on-error-paths
-rpc-fix-null-dereference-on-kmalloc-failure
-asoc-rt5640-fix-dac-and-adc-vol-tlv-values-being-off
-asoc-rt5651-fix-dac-and-adc-vol-tlv-values-being-off
-asoc-sgtl5000-set-dap_avc_ctrl-register-to-correct-d
-asoc-es8316-simplify-adc_pga_gain_tlv-table
-asoc-cs42l42-fix-mixer-volume-control
-asoc-cs42l42-always-wait-at-least-3ms-after-reset
-powerpc-force-inlining-of-cpu_has_feature-to-avoid-b
-vhost-fix-vhost_vq_reset
-scsi-st-fix-a-use-after-free-in-st_open
-scsi-qla2xxx-fix-broken-endif-placement
-staging-comedi-cb_pcidas-fix-request_irq-warn
-staging-comedi-cb_pcidas64-fix-request_irq-warn
-asoc-rt5659-update-mclk-rate-in-set_sysclk
-ext4-do-not-iput-inode-under-running-transaction-in-
-brcmfmac-clear-eap-association-status-bits-on-linkdo
-net-ethernet-aquantia-handle-error-cleanup-of-start-
-appletalk-fix-skb-allocation-size-in-loopback-case
-net-wan-lmc-unregister-device-when-no-matching-devic
-bpf-remove-mtu-check-in-__bpf_skb_max_len
-alsa-usb-audio-apply-sample-rate-quirk-to-logitech-connect
-alsa-hda-realtek-fix-a-determine_headset_type-issue-for-a-dell-aio
-alsa-hda-realtek-call-alc_update_headset_mode-in-hp_automute_hook
-tracing-fix-stack-trace-event-size
-mm-fix-race-by-making-init_zero_pfn-early_initcall
-drm-amdgpu-fix-offset-calculation-in-amdgpu_vm_bo_clear_mappings
-drm-amdgpu-check-alignment-on-cpu-page-for-bo-map
-reiserfs-update-reiserfs_xattrs_initialized-condition
-mm-memcontrol-fix-nr_writeback-leak-in-memcg-and-system-stats
-mm-memcg-make-sure-memory.events-is-uptodate-when-waking-pollers
-mem_cgroup-make-sure-moving_account-move_lock_task-and-stat_cpu-in-the-same-cacheline
-mm-fix-oom_kill-event-handling
-mm-writeback-use-exact-memcg-dirty-counts
-pinctrl-rockchip-fix-restore-error-in-resume
-extcon-add-stubs-for-extcon_register_notifier_all-fu
-extcon-fix-error-handling-in-extcon_dev_register
-firewire-nosy-fix-a-use-after-free-bug-in-nosy_ioctl
-usbip-vhci_hcd-fix-shift-out-of-bounds-in-vhci_hub_control
-usb-quirks-ignore-remote-wake-up-on-fibocom-l850-gl-lte-modem
-usb-musb-fix-suspend-with-devices-connected-for-a64
-usb-xhci-mtk-fix-broken-streams-issue-on-0.96-xhci
-cdc-acm-fix-break-rx-code-path-adding-necessary-calls
-usb-cdc-acm-untangle-a-circular-dependency-between-callback-and-softint
-usb-cdc-acm-downgrade-message-to-debug
-usb-cdc-acm-fix-use-after-free-after-probe-failure
-usb-gadget-udc-amd5536udc_pci-fix-null-ptr-dereference
-staging-rtl8192e-fix-incorrect-source-in-memcpy
-staging-rtl8192e-change-state-information-from-u16-to-u8
-drivers-video-fbcon-fix-null-dereference-in-fbcon_cursor
+*****************************************************
+arm-dts-am33xx-add-aliases-for-mmc-interfaces
+net-pxa168_eth-fix-a-potential-data-race-in-pxa168_e
+misdn-fix-crash-in-fritzpci
+mac80211-choose-first-enabled-channel-for-monitor
+drm-msm-ratelimit-invalid-fence-message
+platform-x86-thinkpad_acpi-allow-the-fnlock-led-to-c
+x86-build-turn-off-fcf-protection-for-realmode-targe
+scsi-target-pscsi-clean-up-after-failure-in-pscsi_ma
+ia64-mca-allocate-early-mca-with-gfp_atomic
+cifs-revalidate-mapping-when-we-open-files-for-smb1-
+cifs-silently-ignore-unknown-oplock-break-handle
+bpf-x86-validate-computation-of-branch-displacements-for-x86-64
+init-kconfig-make-compile_test-depend-on-s390
+init-kconfig-make-compile_test-depend-on-has_iomem
+can-flexcan-flexcan_chip_freeze-fix-chip-freeze-for-missing-bitrate
