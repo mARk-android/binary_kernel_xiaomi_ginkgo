@@ -1,29 +1,25 @@
 =================================================
-Changes in 4.14.230
+Changes in 4.14.231-rc3
 =================================================
- 
-kernel/sched/tune: Refactor SchedTune Assist code
+Patch list:
 *****************************************************
- 
-- Return proper values when write wrappers aren't bypassed
-- Revise Kconfig description
-- Improve overall code style
-- Don't write colocate and sched_boost_no_override values 
-     when WALT is disabled
-- Mark static data as static
-- Improve readability of log messages
-- Propagate cftype struct in write wrappers
-- Use task_is_booster helper rather than hard-coded "init" check      
-- Only force UX tasks to big cores 
-- boost   -> 0-100
-- write_default_values top-app	1, 1, 0, 1
- 
- 
-simple_lmk: 
-*****************************************************
-Add !PSI dependency 
-Print a message when the timeout is reached 
-Update adj targeting priority for Android 10
+alsa-aloop-fix-initialization-of-controls
+asoc-intel-atom-stop-advertising-non-working-s24le-support
+nfc-fix-refcount-leak-in-llcp_sock_bind
+nfc-fix-refcount-leak-in-llcp_sock_connect
+nfc-fix-memory-leak-in-llcp_sock_connect
+nfc-avoid-endless-loops-caused-by-repeated-llcp_sock_connect
+xen-evtchn-change-irq_info-lock-to-raw_spinlock_t
+net-ipv6-check-for-validity-before-dereferencing-cfg-fc_nlinfo.nlh
+ia64-fix-user_stack_pointer-for-ptrace
+ocfs2-fix-deadlock-between-setattr-and-dio_end_io_write
+fs-direct-io-fix-missing-sdio-boundary
+parisc-parisc-agp-requires-sba-iommu-driver
+parisc-avoid-a-warning-on-u8-cast-for-cmpxchg-on-u8-pointers
+arm-dts-turris-omnia-configure-led-intn-pin-as-interrupt-pin
+batman-adv-initialize-struct-batadv_tvlv_tt_vlan_data-reserved-field
+net-ensure-mac-header-is-set-in-virtio_net_hdr_to_skb
+net-sched-sch_teql-fix-null-pointer-dereference
  
  
 Other changes:
@@ -45,40 +41,46 @@ drm: msm: sde: Skip prefill calculations on command mode panels
 qcacmn: Disable all of qdf_trace when WLAN_DEBUG is disabled
 Revert kernel: power: qos: Use effective affinity mask  
  
-  
+ 
 HARDCODED:
 *****************************************************
 kernel: sysctl: max_swappiness = 200;  
 mm: swap: default page-cluster = 0; 
 mm: vmscan" vm_swappiness = 160; 
-
-
-
+ 
+ 
+kernel/sched/tune: Refactor SchedTune Assist code
+*****************************************************
+- Return proper values when write wrappers aren't bypassed
+- Revise Kconfig description
+- Improve overall code style
+- Don't write colocate and sched_boost_no_override values 
+     when WALT is disabled
+- Mark static data as static
+- Improve readability of log messages
+- Propagate cftype struct in write wrappers
+- Use task_is_booster helper rather than hard-coded "init" check      
+- Only force UX tasks to big cores 
+- boost   -> 0-100
+- write_default_values top-app	1, 1, 0, 1
+- busy-cost-data int from freqbench table
+ 
+ 
+simple_lmk: 
+*****************************************************
+Add !PSI dependency 
+Print a message when the timeout is reached 
+Update adj targeting priority for Android 10
+ 
+ 
 Boost CPU->max for 500ms whenever a zygote-forked process becomes a top app
 Boost CPU->max for 150ms when userspace launches an app 
-
+ 
 defconfig: Disable Privileged Access Never (PAN) emulation ARM64_SW_TTBR0_PAN
  
  
 Misc improvements:
 *****************************************************
-Add full CPU frequency tables
+Add full CPU frequency tables 
  
  
-Patch list:
-*****************************************************
-arm-dts-am33xx-add-aliases-for-mmc-interfaces
-net-pxa168_eth-fix-a-potential-data-race-in-pxa168_e
-misdn-fix-crash-in-fritzpci
-mac80211-choose-first-enabled-channel-for-monitor
-drm-msm-ratelimit-invalid-fence-message
-platform-x86-thinkpad_acpi-allow-the-fnlock-led-to-c
-x86-build-turn-off-fcf-protection-for-realmode-targe
-scsi-target-pscsi-clean-up-after-failure-in-pscsi_ma
-ia64-mca-allocate-early-mca-with-gfp_atomic
-cifs-revalidate-mapping-when-we-open-files-for-smb1-
-cifs-silently-ignore-unknown-oplock-break-handle
-bpf-x86-validate-computation-of-branch-displacements-for-x86-64
-init-kconfig-make-compile_test-depend-on-s390
-init-kconfig-make-compile_test-depend-on-has_iomem
-can-flexcan-flexcan_chip_freeze-fix-chip-freeze-for-missing-bitrate
