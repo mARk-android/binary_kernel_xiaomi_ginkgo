@@ -1,5 +1,5 @@
-# Kernel for Xiaomi Redmi Note 8/8T 4.14.230 
-<h3> (stable-queue) </h3>
+# Kernel for Xiaomi Redmi Note 8/8T 4.14.231 
+<h3> (stable-queue rc) </h3>
 
 <pre>                  
                  _    _  _  _     _ _   _ _  
