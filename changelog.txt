@@ -1,5 +1,5 @@
 =================================================
-Changes in 4.14.231-rc3
+Changes in 4.14.231-rc2
 =================================================
 Patch list:
 *****************************************************
@@ -20,6 +20,10 @@ arm-dts-turris-omnia-configure-led-intn-pin-as-interrupt-pin
 batman-adv-initialize-struct-batadv_tvlv_tt_vlan_data-reserved-field
 net-ensure-mac-header-is-set-in-virtio_net_hdr_to_skb
 net-sched-sch_teql-fix-null-pointer-dereference
+i2c-turn-recovery-error-on-init-to-debug
+usbip-add-sysfs_lock-to-synchronize-sysfs-code-paths
+usbip-stub-dev-synchronize-sysfs-code-paths
+usbip-synchronize-event-handler-with-sysfs-code-paths
  
  
 Other changes:
@@ -40,7 +44,8 @@ msm: camera: Fix memory leak in cam_res_mgr_probe()
 drm: msm: sde: Skip prefill calculations on command mode panels 
 qcacmn: Disable all of qdf_trace when WLAN_DEBUG is disabled
 Revert kernel: power: qos: Use effective affinity mask  
- 
+script: basic: fixdep:
+  
  
 HARDCODED:
 *****************************************************
@@ -82,5 +87,3 @@ defconfig: Disable Privileged Access Never (PAN) emulation ARM64_SW_TTBR0_PAN
 Misc improvements:
 *****************************************************
 Add full CPU frequency tables 
- 
- 
