@@ -20,31 +20,57 @@ arm-dts-turris-omnia-configure-led-intn-pin-as-interrupt-pin
 batman-adv-initialize-struct-batadv_tvlv_tt_vlan_data-reserved-field
 net-ensure-mac-header-is-set-in-virtio_net_hdr_to_skb
 net-sched-sch_teql-fix-null-pointer-dereference
-i2c-turn-recovery-error-on-init-to-debug
 usbip-add-sysfs_lock-to-synchronize-sysfs-code-paths
 usbip-stub-dev-synchronize-sysfs-code-paths
 usbip-synchronize-event-handler-with-sysfs-code-paths
- 
- 
-Other changes:
-*****************************************************
-dtsi: busy-cost-data =  sched energy
-binder: Fix log spam caused by interrupted waits 
-proc: Kill facebook crap background 
-soc: qcom: scm: Fix scm_call_count when used with LSE atomics 
-fs: exec: Introduce is_zygote_pid() 
-cpuidle: Optimize pm_qos notifier callback and IPI semantics
-rcu: fix a performance regression Add WQ_POWER_EFFICIENT
-sched: features: Disable EAS_PREFER_IDLE 
-revert f2fs: Fix deadlock between f2fs_quota_sync and block_operation 
-drivers: scsi: ufs: Scrap Qualcomm's PM QoS implementation 
-drivers: scsi: ufs: Add simple IRQ-affined PM QoS operations  
-msm: kgsl: Remove L2PC PM QoS feature 
-msm: camera: Fix memory leak in cam_res_mgr_probe() 
-drm: msm: sde: Skip prefill calculations on command mode panels 
-qcacmn: Disable all of qdf_trace when WLAN_DEBUG is disabled
-Revert kernel: power: qos: Use effective affinity mask  
-script: basic: fixdep:
+i2c-turn-recovery-error-on-init-to-debug
+regulator-bd9571mwv-fix-avs-and-dvfs-voltage-range
+asoc-wm8960-fix-wrong-bclk-and-lrclk-with-pll-enable
+amd-xgbe-update-dma-coherency-values
+sch_red-fix-off-by-one-checks-in-red_check_params
+gianfar-handle-error-code-at-mac-address-change
+net-tipc-fix-a-double-free-in-tipc_sk_mcast_rcv
+arm-dts-imx6-pbab01-set-vmmc-supply-for-both-sd-inte
+net-ncsi-avoid-channel_monitor-hrtimer-deadlock
+asoc-sunxi-sun4i-codec-fill-asoc-card-owner
+soc-fsl-qbman-fix-conflicting-alignment-attributes
+clk-fix-invalid-usage-of-list-cursor-in-register
+clk-fix-invalid-usage-of-list-cursor-in-unregister
+workqueue-move-the-position-of-debug_work_activate-i
+s390-cpcmd-fix-inline-assembly-register-clobbering
+net-mlx5-fix-placement-of-log_max_flow_counter
+rdma-cxgb4-check-for-ipv6-address-properly-while-des
+clk-socfpga-fix-iomem-pointer-cast-on-64-bit
+net-ncsi-make-local-function-ncsi_get_filter-static
+net-ncsi-improve-general-state-logging
+net-ncsi-don-t-return-error-on-normal-response
+net-ncsi-add-generic-netlink-family
+net-ncsi-refactor-mac-vlan-filters
+net-ncsi-avoid-gfp_kernel-in-response-handler
+usbip-fix-vudc-usbip_sockfd_store-races-leading-to-gpf
+cfg80211-remove-warn_on-in-cfg80211_sme_connect
+net-tun-set-tun-dev-addr_len-during-tunsetlink-processing
+drivers-net-fix-memory-leak-in-atusb_probe
+drivers-net-fix-memory-leak-in-peak_usb_create_dev
+net-mac802154-fix-general-protection-fault
+net-ieee802154-nl-mac-fix-check-on-panid
+net-ieee802154-fix-nl802154-del-llsec-key
+net-ieee802154-fix-nl802154-del-llsec-dev
+net-ieee802154-fix-nl802154-add-llsec-key
+net-ieee802154-fix-nl802154-del-llsec-devkey
+net-ieee802154-forbid-monitor-for-set-llsec-params
+net-ieee802154-forbid-monitor-for-del-llsec-seclevel
+net-ieee802154-stop-dump-llsec-params-for-monitors
+revert-cifs-set-cifs_mount_use_prefix_path-flag-on-setting-cifs_sb-prepath
+kvm-arm64-hide-system-instruction-access-to-trace-re
+kvm-arm64-disable-guest-access-to-trace-filter-contr
+drm-imx-imx-ldb-fix-out-of-bounds-array-access-warni
+gfs2-report-already-frozen-thawed-errors
+block-only-update-parent-bi_status-when-bio-fail
+net-phy-broadcom-only-advertise-eee-for-supported-mo
+netfilter-x_tables-fix-compat-match-target-pad-out-of-bound-write
+perf-map-tighten-snprintf-string-precision-to-pass-gcc-check-on-some-32-bit-arches
+xen-events-fix-setting-irq-affinity 
   
  
 HARDCODED:
@@ -87,3 +113,4 @@ defconfig: Disable Privileged Access Never (PAN) emulation ARM64_SW_TTBR0_PAN
 Misc improvements:
 *****************************************************
 Add full CPU frequency tables 
+script: basic: fixdep:
