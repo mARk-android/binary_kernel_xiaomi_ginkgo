@@ -1,8 +1,13 @@
 =================================================
-Changes in 4.14.231-rc2
+Changes in 4.14.231
 =================================================
 Patch list:
 *****************************************************
+ 
+* Upstream To Version 4.14.231
+* Merge tag 'LA.UM.8.1.r1-17100-sm8150.0'
+* Merge tag 'LA.UM.8.9.r1-11900-SM6xx.0'
+ 
 alsa-aloop-fix-initialization-of-controls
 asoc-intel-atom-stop-advertising-non-working-s24le-support
 nfc-fix-refcount-leak-in-llcp_sock_bind
