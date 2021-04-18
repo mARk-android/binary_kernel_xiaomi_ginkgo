@@ -1,8 +1,9 @@
 =================================================
-Changes in 4.14.232-rc4
+Changes in 4.14.232-rc3
 =================================================
-Patch list:
+Added patch:
 *****************************************************
+net-sctp-fix-race-condition-in-sctp_destroy_sock
 input-nspire-keypad-enable-interrupts-only-when-open
 dmaengine-dw-make-it-dependent-to-has_iomem
 arm-dts-fix-moving-mmc-devices-with-aliases-for-omap
@@ -22,67 +23,18 @@ pcnet32-use-pci_resource_len-to-validate-pci-resourc
 net-rds-avoid-potential-use-after-free-in-rds_send_r
 net-tipc-fix-spelling-errors-in-net-tipc-module
 mac80211-clear-sta-fast_rx-when-sta-removed-from-4-a
+input-i8042-fix-pegatron-c15b-id-entry
+hid-wacom-set-ev_key-and-ev_abs-only-for-non-hid_generic-type-of-devices
+readdir-make-sure-to-verify-directory-entry-for-legacy-interfaces-too
+arm64-fix-inline-asm-in-load_unaligned_zeropad
+arm64-alternatives-move-length-validation-in-alternative_-insn-endif
+scsi-libsas-reset-num_scatter-if-libata-marks-qc-as-nodata
+netfilter-conntrack-do-not-print-icmpv6-as-unknown-via-proc
+netfilter-nft_limit-avoid-possible-divide-error-in-nft_limit_init
+net-davicom-fix-regulator-not-turned-off-on-failed-probe
+net-sit-unregister-catch-all-devices
+i40e-fix-the-panic-when-running-bpf-in-xdpdrv-mode
+ibmvnic-avoid-calling-napi_disable-twice
+ibmvnic-remove-duplicate-napi_schedule-call-in-do_reset-function
+ibmvnic-remove-duplicate-napi_schedule-call-in-open-function
  
- 
-Other changes:
-*****************************************************
-dtsi: busy-cost-data =  sched energy
-binder: Fix log spam caused by interrupted waits 
-proc: Kill facebook crap background 
-soc: qcom: scm: Fix scm_call_count when used with LSE atomics 
-fs: exec: Introduce is_zygote_pid() 
-cpuidle: Optimize pm_qos notifier callback and IPI semantics
-rcu: fix a performance regression Add WQ_POWER_EFFICIENT
-sched: features: Disable EAS_PREFER_IDLE 
-revert f2fs: Fix deadlock between f2fs_quota_sync and block_operation 
-drivers: scsi: ufs: Scrap Qualcomm's PM QoS implementation 
-drivers: scsi: ufs: Add simple IRQ-affined PM QoS operations  
-msm: kgsl: Remove L2PC PM QoS feature 
-msm: camera: Fix memory leak in cam_res_mgr_probe() 
-drm: msm: sde: Skip prefill calculations on command mode panels 
-qcacmn: Disable all of qdf_trace when WLAN_DEBUG is disabled
-Revert kernel: power: qos: Use effective affinity mask  
-script: basic: fixdep:
-  
- 
-HARDCODED:
-*****************************************************
-kernel: sysctl: max_swappiness = 200;  
-mm: swap: default page-cluster = 0; 
-mm: vmscan" vm_swappiness = 160; 
- 
- 
-kernel/sched/tune: Refactor SchedTune Assist code
-*****************************************************
-- Return proper values when write wrappers aren't bypassed
-- Revise Kconfig description
-- Improve overall code style
-- Don't write colocate and sched_boost_no_override values 
-     when WALT is disabled
-- Mark static data as static
-- Improve readability of log messages
-- Propagate cftype struct in write wrappers
-- Use task_is_booster helper rather than hard-coded "init" check      
-- Only force UX tasks to big cores 
-- boost   -> 0-100
-- write_default_values top-app	1, 1, 0, 1
-- busy-cost-data int from freqbench table
- 
- 
-simple_lmk: 
-*****************************************************
-Add !PSI dependency 
-Print a message when the timeout is reached 
-Update adj targeting priority for Android 10
- 
- 
-Boost CPU->max for 500ms whenever a zygote-forked process becomes a top app
-Boost CPU->max for 150ms when userspace launches an app 
- 
-defconfig: Disable Privileged Access Never (PAN) emulation ARM64_SW_TTBR0_PAN
- 
- 
-Misc improvements:
-*****************************************************
-Add full CPU frequency tables 
-Merge tag 'LA.UM.8.1.r1-17100-sm8150.0' 
