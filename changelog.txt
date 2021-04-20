@@ -1,5 +1,5 @@
 =================================================
-Changes in 4.14.232-rc3
+Changes in 4.14.232-rc2
 =================================================
 Added patch:
 *****************************************************
@@ -20,8 +20,7 @@ net-ieee802154-forbid-monitor-for-add-llsec-devkey
 net-ieee802154-stop-dump-llsec-seclevels-for-monitor
 net-ieee802154-forbid-monitor-for-add-llsec-seclevel
 pcnet32-use-pci_resource_len-to-validate-pci-resourc
-net-rds-avoid-potential-use-after-free-in-rds_send_r
-net-tipc-fix-spelling-errors-in-net-tipc-module
+usbip-fix-incorrect-double-assignment-to-udc-ud.tcp_rx
 mac80211-clear-sta-fast_rx-when-sta-removed-from-4-a
 input-i8042-fix-pegatron-c15b-id-entry
 hid-wacom-set-ev_key-and-ev_abs-only-for-non-hid_generic-type-of-devices
@@ -37,4 +36,6 @@ i40e-fix-the-panic-when-running-bpf-in-xdpdrv-mode
 ibmvnic-avoid-calling-napi_disable-twice
 ibmvnic-remove-duplicate-napi_schedule-call-in-do_reset-function
 ibmvnic-remove-duplicate-napi_schedule-call-in-open-function
+arm-footbridge-fix-pci-interrupt-mapping
+arm-9071-1-uprobes-don-t-hook-on-thumb-instructions
  
