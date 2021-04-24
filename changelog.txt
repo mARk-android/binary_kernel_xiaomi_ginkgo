@@ -1,5 +1,5 @@
 =================================================
-Changes in 4.14.232-rc2
+Changes in 4.14.232-rc1
 =================================================
 Added patch:
 *****************************************************
@@ -38,4 +38,76 @@ ibmvnic-remove-duplicate-napi_schedule-call-in-do_reset-function
 ibmvnic-remove-duplicate-napi_schedule-call-in-open-function
 arm-footbridge-fix-pci-interrupt-mapping
 arm-9071-1-uprobes-don-t-hook-on-thumb-instructions
+gup-document-and-work-around-cow-can-break-either-way-issue
+net-hso-fix-null-ptr-deref-during-tty-device-unregistration
+ext4-correct-error-label-in-ext4_rename
+ 
+ 
+Other changes:
+*****************************************************
+dtsi: busy-cost-data =  sched energy
+binder: Fix log spam caused by interrupted waits 
+proc: Kill facebook crap background 
+soc: qcom: scm: Fix scm_call_count when used with LSE atomics 
+fs: exec: Introduce is_zygote_pid() 
+cpuidle: Optimize pm_qos notifier callback and IPI semantics
+rcu: fix a performance regression Add WQ_POWER_EFFICIENT
+sched: features: Disable EAS_PREFER_IDLE 
+revert f2fs: Fix deadlock between f2fs_quota_sync and block_operation 
+drivers: scsi: ufs: Scrap Qualcomm's PM QoS implementation 
+drivers: scsi: ufs: Add simple IRQ-affined PM QoS operations  
+msm: kgsl: Remove L2PC PM QoS feature 
+msm: camera: Fix memory leak in cam_res_mgr_probe() 
+drm: msm: sde: Skip prefill calculations on command mode panels 
+qcacmn: Disable all of qdf_trace when WLAN_DEBUG is disabled
+Revert kernel: power: qos: Use effective affinity mask  
+script: basic: fixdep:
+boot: dts: qcom: trinket-qrd: mdss-dsi-bl-max-level = <2047>
+boot: dts: qcom: pm8150b: Update charging dts from MIUI 12.5 
+drivers: power: supply: qcom smb5-lib.c fix vbat_now_uv & max_fv_uv
+ 
+ 
+HARDCODED:
+*****************************************************
+kernel: sysctl: max_swappiness = 200;  
+mm: swap: default page-cluster = 0; 
+mm: vmscan" vm_swappiness = 160; 
+ 
+ 
+kernel/sched/tune: Refactor SchedTune Assist code
+*****************************************************
+- Return proper values when write wrappers aren't bypassed
+- Revise Kconfig description
+- Improve overall code style
+- Don't write colocate and sched_boost_no_override values 
+     when WALT is disabled
+- Mark static data as static
+- Improve readability of log messages
+- Propagate cftype struct in write wrappers
+- Use task_is_booster helper rather than hard-coded "init" check      
+- Only force UX tasks to big cores 
+- boost   -> 0-100
+- write_default_values top-app	1, 1, 0, 1
+- busy-cost-data int from freqbench table
+ 
+ 
+simple_lmk: 
+*****************************************************
+Add !PSI dependency 
+Print a message when the timeout is reached 
+Update adj targeting priority for Android 10
+ 
+ 
+Boost CPU->max for 500ms whenever a zygote-forked process becomes a top app
+Boost CPU->max for 150ms when userspace launches an app 
+ 
+defconfig: Disable Privileged Access Never (PAN) emulation ARM64_SW_TTBR0_PAN
+ 
+ 
+Misc improvements:
+*****************************************************
+Add full CPU frequency tables 
+Merge CAF tag 'LA.UM.8.1.r1-17100-sm8150.0' in:
+drivers: staging: wlan: fw-api: v945 -> v973
+
  
