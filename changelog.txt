@@ -1,5 +1,5 @@
 =================================================
-Changes in 4.14.232-rc1
+Changes in 4.14.232
 =================================================
 Added patch:
 *****************************************************
@@ -39,8 +39,18 @@ ibmvnic-remove-duplicate-napi_schedule-call-in-open-function
 arm-footbridge-fix-pci-interrupt-mapping
 arm-9071-1-uprobes-don-t-hook-on-thumb-instructions
 gup-document-and-work-around-cow-can-break-either-way-issue
-net-hso-fix-null-ptr-deref-during-tty-device-unregistration
 ext4-correct-error-label-in-ext4_rename
+pinctrl-lewisburg-update-number-of-pins-in-community
+hid-alps-fix-error-return-code-in-alps_input_configu
+hid-wacom-assign-boolean-values-to-a-bool-variable
+arm-dts-fix-swapped-mmc-order-for-omap3
+net-geneve-check-skb-is-large-enough-for-ipv4-ipv6-h
+s390-entry-save-the-caller-of-psw_idle
+xen-netback-check-for-hotplug-status-existence-befor
+cavium-liquidio-fix-duplicate-argument
+ia64-fix-discontig.c-section-mismatches
+ia64-tools-remove-duplicate-definition-of-ia64_mf-on
+x86-crash-fix-crash_setup_memmap_entries-out-of-bounds-access
  
  
 Other changes:
@@ -65,6 +75,11 @@ script: basic: fixdep:
 boot: dts: qcom: trinket-qrd: mdss-dsi-bl-max-level = <2047>
 boot: dts: qcom: pm8150b: Update charging dts from MIUI 12.5 
 drivers: power: supply: qcom smb5-lib.c fix vbat_now_uv & max_fv_uv
+drivers: staging: wlan: fw-api -> v973
+fs: exfat_fs update drv -> 5.5.0
+fs: sdfat update drv ->  2.4.5
+drivers: usb: hub: add toggle for disabling newly added USB devices
+sysctl: Move sched_latency_ns under SCHED_WALT 
  
  
 HARDCODED:
@@ -108,6 +123,4 @@ Misc improvements:
 *****************************************************
 Add full CPU frequency tables 
 Merge CAF tag 'LA.UM.8.1.r1-17100-sm8150.0' in:
-drivers: staging: wlan: fw-api: v945 -> v973
-
- 
+Marge Wireguard tag 1.0.20210424
