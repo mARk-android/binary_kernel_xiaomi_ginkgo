@@ -1,59 +1,14 @@
 =================================================
-Changes in 4.14.232
+Changes in 4.14.233-rc
 =================================================
 Added patch:
 *****************************************************
-net-sctp-fix-race-condition-in-sctp_destroy_sock.patch
-input-nspire-keypad-enable-interrupts-only-when-open.patch
-dmaengine-dw-make-it-dependent-to-has_iomem.patch
-arm-dts-fix-moving-mmc-devices-with-aliases-for-omap.patch
-arc-kernel-return-efault-if-copy_to_user-fails.patch
-neighbour-disregard-dead-dst-in-neigh_update.patch
-arm-keystone-fix-integer-overflow-warning.patch
-asoc-fsl_esai-fix-tdm-slot-setup-for-i2s-mode.patch
-scsi-scsi_transport_srp-don-t-block-target-in-srp_po.patch
-net-ieee802154-stop-dump-llsec-keys-for-monitors.patch
-net-ieee802154-stop-dump-llsec-devs-for-monitors.patch
-net-ieee802154-forbid-monitor-for-add-llsec-dev.patch
-net-ieee802154-stop-dump-llsec-devkeys-for-monitors.patch
-net-ieee802154-forbid-monitor-for-add-llsec-devkey.patch
-net-ieee802154-stop-dump-llsec-seclevels-for-monitor.patch
-net-ieee802154-forbid-monitor-for-add-llsec-seclevel.patch
-pcnet32-use-pci_resource_len-to-validate-pci-resourc.patch
-usbip-fix-incorrect-double-assignment-to-udc-ud.tcp_rx.patch
-mac80211-clear-sta-fast_rx-when-sta-removed-from-4-a.patch
-input-i8042-fix-pegatron-c15b-id-entry.patch
-hid-wacom-set-ev_key-and-ev_abs-only-for-non-hid_generic-type-of-devices.patch
-readdir-make-sure-to-verify-directory-entry-for-legacy-interfaces-too.patch
-arm64-fix-inline-asm-in-load_unaligned_zeropad.patch
-arm64-alternatives-move-length-validation-in-alternative_-insn-endif.patch
-scsi-libsas-reset-num_scatter-if-libata-marks-qc-as-nodata.patch
-netfilter-conntrack-do-not-print-icmpv6-as-unknown-via-proc.patch
-netfilter-nft_limit-avoid-possible-divide-error-in-nft_limit_init.patch
-net-davicom-fix-regulator-not-turned-off-on-failed-probe.patch
-net-sit-unregister-catch-all-devices.patch
-i40e-fix-the-panic-when-running-bpf-in-xdpdrv-mode.patch
-ibmvnic-avoid-calling-napi_disable-twice.patch
-ibmvnic-remove-duplicate-napi_schedule-call-in-do_reset-function.patch
-ibmvnic-remove-duplicate-napi_schedule-call-in-open-function.patch
-arm-footbridge-fix-pci-interrupt-mapping.patch
-arm-9071-1-uprobes-don-t-hook-on-thumb-instructions.patch
-gup-document-and-work-around-cow-can-break-either-way-issue.patch
-net-hso-fix-null-ptr-deref-during-tty-device-unregistration.patch
-ext4-correct-error-label-in-ext4_rename.patch
-pinctrl-lewisburg-update-number-of-pins-in-community.patch
-hid-alps-fix-error-return-code-in-alps_input_configu.patch
-hid-wacom-assign-boolean-values-to-a-bool-variable.patch
-arm-dts-fix-swapped-mmc-order-for-omap3.patch
-net-geneve-check-skb-is-large-enough-for-ipv4-ipv6-h.patch
-s390-entry-save-the-caller-of-psw_idle.patch
-xen-netback-check-for-hotplug-status-existence-befor.patch
-cavium-liquidio-fix-duplicate-argument.patch
-ia64-fix-discontig.c-section-mismatches.patch
-ia64-tools-remove-duplicate-definition-of-ia64_mf-on.patch
-x86-crash-fix-crash_setup_memmap_entries-out-of-bounds-access.patch
-net-hso-fix-null-deref-on-disconnect-regression.patch
-usb-cdc-acm-fix-poison-unpoison-imbalance.patch
+usbip-vudc-synchronize-sysfs-code-paths
+acpi-tables-x86-reserve-memory-occupied-by-acpi-tables
+acpi-x86-call-acpi_boot_table_init-after-acpi_table_upgrade
+bpf-fix-backport-of-bpf-restrict-unknown-scalars-of-mixed-signed-bounds-for-unprivileged
+bpf-fix-up-selftests-after-backports-were-fixed
+net-usb-ax88179_178a-initialize-local-variables-before-use
  
  
 Other changes:
