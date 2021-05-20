@@ -1,3 +1,68 @@
+=======================================
+mARkOS kernel Q MIUI build-4.14.233-239
+Date: 20210520-1600          ~~~~~~ ^
+=======================================
+acpi-hotplug-pci-fix-reference-count-leak-in-enable_
+alsa-hda-generic-change-the-dac-ctl-name-for-lo-spk
+arm-9066-1-ftrace-pause-unpause-function-graph-trace
+block-reexpand-iov_iter-after-read-write
+ceph-fix-fscache-invalidation
+gpiolib-acpi-add-quirk-to-ignore-ec-wakeups-on-dell-
+input-elants_i2c-do-not-bind-to-i2c-hid-compatible-a
+input-silead-add-workaround-for-x86-bios-es-which-br
+lib-stackdepot-turn-depot_lock-spinlock-to-raw_spinl
+pci-thunder-fix-compile-testing
+serial-8250-fix-potential-deadlock-in-rs485-mode
+um-mark-all-kernel-symbols-as-local
+ip6_tunnel-sit-proper-dev_-hold-put-in-ndo_init-methods
+ipv6-remove-extra-dev_hold-for-fallback-tunnels
+sit-proper-dev_-hold-put-in-ndo_init-methods
+xhci-do-not-use-gfp_kernel-in-potentially-atomic-context
+ 
+ 
+ 
+ 
+=======================================
+mARkOS kernel Q MIUI build-4.14.233-238
+Date: 20210520-1500          ~~~~~~ ^
+=======================================
+• kernel:cgroup-v1: include devfreq_boost
+
+ 
+ 
+ 
+=======================================
+mARkOS kernel Q MIUI build-4.14.233-231
+Date: 20210520-1500
+=======================================
+• testing new builder
+
+ 
+ 
+=======================================
+mARkOS kernel Q MIUI build-4.14.233-225
+Date: 20210520-1300 
+=======================================
+* defconfig from:
+CONFIG_MAX_BOOST_FREQ_LP=1804800
+CONFIG_MAX_BOOST_FREQ_PERF=1401600
+* to:
+CONFIG_MAX_BOOST_FREQ_LP=614400
+CONFIG_MAX_BOOST_FREQ_PERF=1056000
+
+
+
+
+
+=======================================
+mARkOS kernel Q MIUI build-4.14.233-224
+Date: 20210520-1300 
+=======================================
+
+* mm:vmscan: vm_swappiness 80
+* kernel:tune: schedboost top-app 1 1
+* kernel:sysctl max_swappiness = 100
+
 =================================================
 Changes in 4.14.233-build-191
 =================================================
