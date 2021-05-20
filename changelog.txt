@@ -1,4 +1,18 @@
 =======================================
+mARkOS kernel Q MIUI build-4.14.233-243
+Date: 20210520-1700          ~~~~~~ ^
+=======================================
+
+• kcal: color control: 
+  upon config change force reprocessing
+• data[idx] 230
+• SDE_HW_KCAL_INIT_ADJ 230
+•  kcal_r  230  
+•  kcal_g  230
+•  kcal_b  230
+
+
+=======================================
 mARkOS kernel Q MIUI build-4.14.233-239
 Date: 20210520-1600          ~~~~~~ ^
 =======================================
