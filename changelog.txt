@@ -1,4 +1,12 @@
 =======================================
+mARkOS kernel Q MIUI build-4.14.233-245
+Date: 20210521-1400          ~~~~~~ ^
+=======================================
+• fixed typo in important function 
+• try to improve kcal reset in miui 
+
+
+=======================================
 mARkOS kernel Q MIUI build-4.14.233-243
 Date: 20210520-1700          ~~~~~~ ^
 =======================================
