@@ -1,4 +1,306 @@
 =======================================
+mARkOS kernel Q MIUI build-4.14.235-7
+Date: 20210530-2200          ~~~~~~ ^
+=======================================
+iio-adc-ad7793-add-missing-error-code-in-ad7793_setup
+mei-request-autosuspend-after-sending-rx-flow-control
+misc-uss720-fix-memory-leak-in-uss720_probe
+staging-iio-cdc-ad7746-avoid-overwrite-of-num_channels
+thunderbolt-dma_port-fix-nvm-read-buffer-bounds-and-offset-issue
+usb-trancevibrator-fix-control-request-direction
+serial-rp2-use-request_firmware-instead-of-request_firmware_nowait
+serial-sh-sci-fix-off-by-one-error-in-fifo-threshold-register-setting
+usb-gadget-udc-renesas_usb3-fix-a-race-in-usb3_start_pipen
+usb-serial-ftdi_sio-add-ids-for-ids-gmbh-products
+usb-serial-option-add-telit-le910-s1-compositions-0x7010-0x7011
+usb-serial-pl2303-add-device-id-for-adlink-nd-6530-gc
+usb-serial-ti_usb_3410_5052-add-startech.com-device-id
+net-usb-fix-memory-leak-in-smsc75xx_bind
+bluetooth-cmtp-fix-file-refcount-when-cmtp_attach_device-fails
+drm-meson-fix-shutdown-crash-when-component-not-probed
+net-mlx4-fix-eeprom-dump-support
+nfs-don-t-corrupt-the-value-of-pg_bytes_written-in-nfs_do_recoalesce
+nfs-fix-an-incorrect-limit-in-filelayout_decode_layout
+nfsv4-fix-v4.0-v4.1-seek_data-return-enotsupp-when-set-nfs_v4_2-config
+revert-net-tipc-fix-a-double-free-in-tipc_sk_mcast_rcv
+tipc-skb_linearize-the-head-skb-when-reassembling-msgs
+i2c-i801-don-t-generate-an-interrupt-on-bus-reset
+i2c-s3c2410-fix-possible-null-pointer-deref-on-read-message-after-write
+perf-jevents-fix-getting-maximum-number-of-fds
+
+
+
+
+
+
+=======================================
+mARkOS kernel Q MIUI build-4.14.235-6
+Date: 20210529-2100          ~~~~~~ ^
+=======================================
+ath10k-validate-first-subframe-of-a-msdu-before-processing-the-list
+cfg80211-mitigate-a-msdu-aggregation-attacks
+dm-snapshot-properly-fix-a-crash-when-an-origin-has-no-snapshots
+iommu-vt-d-fix-sysfs-leak-in-alloc_iommu
+kgdb-fix-gcc-11-warnings-harder
+mac80211-assure-all-fragments-are-encrypted
+mac80211-check-defrag-pn-against-current-frame
+mac80211-prevent-mixed-key-and-fragment-cache-attack
+net-hso-fix-control-request-directions
+nfsv4-fix-a-null-pointer-dereference-in-pnfs_mark_matching_lsegs_return
+perf-intel-pt-fix-sample-instruction-bytes
+perf-intel-pt-fix-transaction-abort-handling
+proc-check-proc-pid-attr-writes-against-file-opener
+
+
+
+
+
+
+
+
+=======================================
+mARkOS kernel Q MIUI build-4.14.235-5
+Date: 20210529-1200  ~~~~~~ ^
+=======================================
+• q6afe added proxy chanell
+
+ 
+  
+ 
+ 
+=======================================
+mARkOS kernel Q MIUI build-4.14.235-4
+Date: 20210528-2300  ~~~~~~ ^
+=======================================
+
+msm pcm routing v2 add proxy voip chanell + q6
+nfc-nci-fix-memory-leak-in-nci_allocate_device
+kernel: sysctl: stune_boost "top-app" -> 5
+
+
+
+
+
+
+=======================================
+mARkOS kernel Q MIUI build-4.14.235-1
+Date: 20210527-1500  ~~~~~~ ^
+=======================================
+mm_vmstat_drop_zone_lock_in_proc_pagetypeinfo
+tweewide_fix_most_shebang_lines
+scripts_switch_explicitly_to_python_3
+usb_dwc3_gadget_enable_suspend_events
+netfilter_x_tables_use_correct_memory_barriers
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+=======================================
+4.14.234  STABLE   +++ V +++
+=======================================
+ 
+ 
+=======================================
+mARkOS kernel Q MIUI build-4.14.234 + fix
+Date: 20210526-2300  ~~~~~~ ^
+=======================================
+• prefill calculations on command mode panels 
+• revert fix ext4.c <-  .226
+• fix diagmem.c
+• fix adsprpc.c
+• fix div64.h
+* revert force sde_hw_kcal_ctrl
+ 
+
+
+ 
+ 
+ 
+ 
+=======================================
+mARkOS kernel Q MIUI build-4.14.234-54--stable
+Date: 20210526-1400  ~~~~~~ ^
+=======================================
+video-hgafb-correctly-handle-card-detect-failure-during-probe
+dm-snapshot-fix-crash-with-transient-storage-and-zero-chunk-size 
+bluetooth-smp-fail-if-remote-and-local-public-keys-are-identical
+ 
+ 
+ 
+
+=======================================
+mARkOS kernel Q MIUI build-4.14.234-51
+Date: 20210526-0000  ~~~~~~ ^
+=======================================
+revert dm-snapshot-fix-a-crash-when-an-origin-has-no-snapshots
+revert dm-snapshot-fix-crash-with-transient-storage-and-zero-chunk-size
+
+
+
+=======================================
+mARkOS kernel Q MIUI build-4.14.234-50
+Date: 20210524-2300  ~~~~~~ ^
+=======================================
+• fs: proc: cmdline: add new  SafetyNet flags 
+ 
+ 
+ 
+  
+=======================================
+mARkOS kernel Q MIUI build-4.14.234-48
+Date: 20210524-2000  ~~~~~~ ^
+=======================================
+• lz4: staticify functions 
+• lz4: remove unused functions 
+ 
+ 
+ 
+=======================================
+mARkOS kernel Q MIUI build-4.14.234-47
+Date: 20210524-1900  ~~~~~~ ^
+=======================================
+openrisc-fix-a-memory-leak
+rdma-rxe-clear-all-qp-fields-if-creation-failed
+scsi-qla2xxx-fix-error-return-code-in-qla82xx_write_
+ptrace-make-ptrace-fail-if-the-tracee-changed-its-pi
+cifs-fix-memory-leak-in-smb2_copychunk_range
+alsa-line6-fix-racy-initialization-of-line6-midi
+alsa-usb-audio-validate-ms-endpoint-descriptors
+alsa-bebob-oxfw-fix-kconfig-entry-for-mackie-d.2-pro
+revert-alsa-sb8-add-a-check-for-request_region
+alsa-hda-realtek-reset-eapd-coeff-to-default-value-for-alc287
+revert-rapidio-fix-a-null-pointer-dereference-when-create_workqueue-fails
+rapidio-handle-create_workqueue-failure
+xen-pciback-reconfigure-also-from-backend-watch-handler
+dm-snapshot-fix-a-crash-when-an-origin-has-no-snapshots
+dm-snapshot-fix-crash-with-transient-storage-and-zero-chunk-size
+revert-video-hgafb-fix-potential-null-pointer-dereference
+revert-net-stmicro-fix-a-missing-check-of-clk_prepare
+revert-leds-lp5523-fix-a-missing-check-of-return-value-of-lp55xx_read
+revert-hwmon-lm80-fix-a-missing-check-of-bus-read-in-lm80-probe
+revert-video-imsttfb-fix-potential-null-pointer-dereferences
+revert-ecryptfs-replace-bug_on-with-error-handling-code
+revert-gdrom-fix-a-memory-leak-bug
+cdrom-gdrom-deallocate-struct-gdrom_unit-fields-in-remove_gdrom
+cdrom-gdrom-initialize-global-variable-at-init-time
+revert-media-rcar_drif-fix-a-memory-disclosure
+revert-rtlwifi-fix-a-potential-null-pointer-dereference
+revert-qlcnic-avoid-potential-null-pointer-dereference
+revert-niu-fix-missing-checks-of-niu_pci_eeprom_read
+ethernet-sun-niu-fix-missing-checks-of-niu_pci_eeprom_read
+net-stmicro-handle-clk_prepare-failure-during-init
+net-rtlwifi-properly-check-for-alloc_workqueue-failure
+leds-lp5523-check-return-value-of-lp5xx_read-and-jump-to-cleanup-code
+qlcnic-add-null-check-after-calling-netdev_alloc_skb
+video-hgafb-fix-potential-null-pointer-dereference
+vgacon-record-video-mode-changes-with-vt_resizex
+vt-fix-character-height-handling-with-vt_resizex
+tty-vt-always-invoke-vc-vc_sw-con_resize-callback
+ 
+• fs: proc: cmdline: new  SafetyNet flags 
+ 
+ 
+ 
+  
+=======================================
+mARkOS kernel Q MIUI build-4.14.234-39
+Date: 20210523-2300  ~~~~~~ ^
+=======================================
+• openrisc-fix-a-memory-leak
+• rdma-rxe-clear-all-qp-fields-if-creation-failed
+• scsi-qla2xxx-fix-error-return-code-in-qla82xx_write_
+• ptrace-make-ptrace-fail-if-the-tracee-changed-its-pi
+• CPUSET CAMERA = 0-3,6-7
+ 
+ 
+
+
+ 
+=======================================
+mARkOS kernel Q MIUI build-4.14.234-35
+Date: 20210523-2200  ~~~~~~ ^
+=======================================
+• qcacmn: Disable all of qdf_trace when 
+  WLAN_DEBUG is disabled
+
+
+
+ 
+ 
+=======================================
+mARkOS kernel Q MIUI build-4.14.234-34
+Date: 20210523-2200  ~~~~~~ ^
+=======================================
+• sm6150c sm8150c
+  include pm_qos.h to sm6150c
+  add KEY_VOICECOMMAND
+  add Proxy Tx Rx BACK END DAI Link
+ 
+ 
+ 
+ 
+ 
+=======================================
+mARkOS kernel Q MIUI build-4.14.234-33
+Date: 20210523-2200  ~~~~~~ ^
+=======================================
+• edit msm-pcm-routing-v2.c
+• add static int num_app_cfg_types + 5 ex
+
+ 
+ 
+ 
+ 
+=======================================
+mARkOS kernel Q MIUI build-4.14.234-32
+Date: 20210523-2200  ~~~~~~ ^
+=======================================
+• kernel:sysctl.c
+  move sched_latency back to DEBUG
+  add sched_user_hint to WALT
+  move min max sched_tunable_scaling to SMP
+  
+• techpack
+  add names are used by HAL to specify the BE backend
+ 
+ 
+ 
+=======================================
+mARkOS kernel Q MIUI build-4.14.234-31
+Date: 20210523-2200  ~~~~~~ ^
+=======================================
+• drm: Reduce latency while processing atomic ioctls 
+  add h drm_plane_helper devfreq_boost to drm_atomic.c
+  probe_type = PROBE_FORCE_SYNCHRONOUS
+
+• kernel:sysctl.c
+  Dynamic SchedTune Boost: 
+  battery stune_boost top-app max 3 (20)
+
+=======================================
 mARkOS kernel Q MIUI build-4.14.233-245
 Date: 20210521-1400          ~~~~~~ ^
 =======================================
